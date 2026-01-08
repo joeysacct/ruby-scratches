@@ -1,0 +1,3433 @@
+0 LOAD_CONST 0 (0)
+2 LOAD_CONST 1 (('StandardCardDeck',))
+4 IMPORT_NAME 0 (StandardCardDeck)
+6 IMPORT_FROM 0 (StandardCardDeck)
+8 STORE_NAME 0 (StandardCardDeck)
+10 POP_TOP
+
+12 LOAD_CONST 0 (0)
+14 LOAD_CONST 2 (('StandardCard',))
+16 IMPORT_NAME 1 (StandardCard)
+18 IMPORT_FROM 1 (StandardCard)
+20 STORE_NAME 1 (StandardCard)
+22 POP_TOP
+
+24 LOAD_CONST 0 (0)
+26 LOAD_CONST 3 (None)
+28 IMPORT_NAME 2 (random)
+30 STORE_NAME 2 (random)
+
+32 LOAD_CONST 0 (0)
+34 LOAD_CONST 3 (None)
+36 IMPORT_NAME 3 (os)
+38 STORE_NAME 3 (os)
+
+40 LOAD_CONST 0 (0)
+42 LOAD_CONST 3 (None)
+44 IMPORT_NAME 4 (sys)
+46 STORE_NAME 4 (sys)
+
+48 LOAD_CONST 4 ("\x1b[31m")
+50 STORE_NAME 5 (RED)
+
+52 LOAD_CONST 5 ("\x1b[32m")
+54 STORE_NAME 6 (GREEN)
+
+56 LOAD_CONST 6 ("\x1b[34m")
+58 STORE_NAME 7 (BLUE)
+
+60 LOAD_CONST 7 ("\x1b[90m")
+62 STORE_NAME 8 (GRAY)
+
+64 LOAD_CONST 8 ("\x1b[36m")
+66 STORE_NAME 9 (CYAN)
+
+68 LOAD_CONST 9 ("\x1b[97m")
+70 STORE_NAME 10 (BW)
+
+72 LOAD_CONST 10 ("\x1b[35m")
+74 STORE_NAME 11 (MAG)
+
+76 LOAD_CONST 11 ("\x1b[33m")
+78 STORE_NAME 12 (YELL)
+
+80 LOAD_CONST 12 ("\x1b[30m")
+82 STORE_NAME 13 (BLACK)
+
+84 LOAD_CONST 13 ("\x1b[0m")
+86 STORE_NAME 14 (RESET)
+
+88 LOAD_CONST 14 (code object main)
+90 MAKE_FUNCTION
+92 STORE_NAME 15 (main)
+
+94 LOAD_CONST 15 (code object remove_trick)
+96 MAKE_FUNCTION
+98 STORE_NAME 16 (remove_trick)
+
+100 LOAD_CONST 16 ("return")
+102 LOAD_NAME 17 (int)
+104 BUILD_TUPLE 2
+106 LOAD_CONST 17 (code object tricks)
+108 MAKE_FUNCTION
+110 SET_FUNCTION_ATTRIBUTE 4
+112 STORE_NAME 18 (tricks)
+
+114 LOAD_CONST 18 (code object get_safe_dir)
+116 MAKE_FUNCTION
+118 STORE_NAME 19 (get_safe_dir)
+
+120 LOAD_NAME 20 (__name__)
+122 LOAD_CONST 19 ("__main__")
+124 COMPARE_OP 88 (==)
+126 POP_JUMP_IF_FALSE 8 (to 136)
+
+128 LOAD_NAME 15 (main)
+130 PUSH_NULL
+132 CALL 0
+134 POP_TOP
+136 RETURN_CONST 3 (None)
+
+138 RETURN_CONST 3 (None)
+
+
+0 LOAD_GLOBAL 0 (os)
+2 LOAD_ATTR 2 (name)
+4 LOAD_CONST 1 ("nt")
+6 COMPARE_OP 88 (==)
+8 POP_JUMP_IF_FALSE 59 (to 42)
+
+10 LOAD_CONST 2 (0)
+12 LOAD_CONST 0 (None)
+14 IMPORT_NAME 2 (ctypes)
+16 STORE_FAST 0 (ctypes)
+
+18 LOAD_FAST 0 (ctypes)
+20 LOAD_ATTR 6 (windll)
+22 LOAD_ATTR 8 (kernel32)
+24 STORE_FAST 1 (kernel32)
+
+26 LOAD_FAST 1 (kernel32)
+28 LOAD_ATTR 11 (NULL|self + SetConsoleMode)
+30 LOAD_FAST 1 (kernel32)
+32 LOAD_ATTR 13 (NULL|self + GetStdHandle)
+34 LOAD_CONST 3 (-11)
+36 CALL 1
+38 LOAD_CONST 4 (7)
+40 CALL 2
+42 POP_TOP
+
+44 LOAD_GLOBAL 15 (NULL + get_safe_dir)
+46 CALL 0
+48 STORE_FAST 2 (safe_dir)
+
+50 LOAD_CONST 2 (0)
+52 STORE_FAST 3 (game_count)
+
+54 LOAD_CONST 2 (0)
+56 STORE_FAST 4 (reset_tricks)
+
+58 LOAD_CONST 5 (True)
+60 STORE_FAST 5 (game_7)
+
+62 LOAD_CONST 5 (True)
+64 STORE_FAST 6 (game_13)
+
+66 LOAD_CONST 5 (True)
+68 STORE_FAST 7 (game_20)
+
+70 LOAD_CONST 6 ('L.S.\nI hope this letter finds you well. We were all hoping to contact you a hair sooner than now, but time does as it may. Enclosed is a very peculiar book that we found on some of those "outings" I told you so much about. They are very... interesting... Please let me know what you can make of this book. It seems quite fascinating and not of this world. But please, do make haste. You and I must be sure to return it to Mr. You Know Who sooner rather than later. You know how he gets about misplaced things. Anyways, ta ta for now!\n- B')
+72 STORE_FAST 8 (message)
+
+74 LOAD_CONST 7 (".--... -.-... -.---. -----. -..-.. -..--- -.-... --.... -----. -..--- -.-... -.--.- -----. --.... -....- .--.-. -.--.- -----. --..-. -.-... -.---. -----. -..--. .----. .---.- .---.- -..-.- .----. -----. --.... -...-. -.--.- -....- ------ -----. .....- -.---. -.--.- -----. -.--.- -....- .----. -..--- -----. .--.-. -..... .--.-. -...-. -..--- -----. ..--.- .----. -...-. -.--.- -....- .----. -.-.-- -----. .---.- -...-. .---.- -----. --.... .----. ------ ------ ------ -----. .--... -.-... -.---. -.-.-- -----. -.--.. .----. .--.-. -.-.-- .---.. -....- -----. .----- -.-... -.-.-- -----. .--.-. -..--- -.--.. --.... .----. -.-.-- -.--.. -----. --.... -...-. -..-.- -..-.- -----. -..-.- .----. .--.-. .---.- -----. --..-. -.-... -.---. -----. .---.- -.-... --.... -..--- -----. -.-..- .--.-. -.--.- -....- -.--.. -----. -.---. -..--- -.--.- -.-... -----. -..--- -.-... -.--.- -....- -...-. -..--- -..... -----. .--.-- -.---. -.--.- -----. .---.- .--.-. -.-.-- -..-.. -..--- .----. -.--.. -.--.. ------ -----. ...-.- -.-... -..-.- -..-.- -.-... --.... -----. -.--.- -....- .----. -..--. ------ -----. ..-.-- .----. .--.-. .---.- -----. -.--.- -....- .----. -..--. -----. --.... -....- .----. -.-.-- .----. -----. -.--.- -....- .----. --..-. -----. -..--. .--.-. --..-. -----. -..-.- -...-. .----. ------ -----. ..-..- -.---. -.--.. -.--.- -----. .--.-. -.--.. -----. --.... .----. -----. -....- .--.-. -.---- .----. ------ -----. ..-..- -.---. -.--.. -.--.- -----. .--.-. -.--.. -----. -.--.- -....- .----. --..-. -----. --.... -...-. -..-.- -..-.- ------ -----. .-..-- -....- .----. -----. -.-..- .--.-. -.--.- -....- -----. .--.-- .----. .----- -.-... -.-.-- .----. -----. --..-. -.-... -.---. -----. -...-. -.--.. -----. .--.-. -----. -.--.- -.-.-- .----. .--.-. .---.. -....- .----. -.-.-- -.-... -.---. -.--.. -----. -.-... -..--- .----. -----. .....- -.---. -.--.- -----. -...-. -.--.- -----. -.-.-- .----. -..--. .--.-. -...-. -..--- -.--.. -----. .--.-. -.--.. -----. -.--.- -....- .----. -----. -.-... -..--- -..-.- --..-. -----. -.-..- .--.-. -.--.- -....- -----. .--.-. -....- .----. .--.-. .---.- ------ -----. .--... -.-... -.---. -----. .--.-. -.-.-- .----. -----. .----- .--.-. -.--.. -.--.- -----. .--.-. -.-..- -.-..- -.-.-- -.-... .--.-. .---.. -....- -...-. -..--- -..... -----. .--.-. -----. -.-..- -.-... -...-. -..--- -.--.- -----. -.-... .----- -----. -..--- -.-... -----. -.-.-- .----. -.--.- -.---. -.-.-- -..--- ------ -----. ...... -..--- -----. .----. -..--- .---.- ------ -----. .-..-- -....- .----. -----. ...-.. -..--- .---.- ------ -----. .--... -.-... -.---. -----. -..--. -.---. -.--.. -.--.- -----. .--.-- .----. -----. -.-..- -.-.-- .----. -.-..- .--.-. -.-.-- .----. .---.- -----. .----- -.-... -.-.-- -----. -.--.- -....- .----. -----. .---.. -.-... -..--. -...-. -..--- -..... -----. --.... -.-... -.-.-- -..-.- .---.- -----. .--.-. -..--- .---.- -----. -.--.- -....- .----. -----. .---.. -....- -.-... -...-. .---.. .----. -.--.. -----. --..-. -.-... -.---. -----. -..--. -.---. -.--.. -.--.- -----. -..--. .--.-. -..-.. .----. ------ -----. .-.--. .----. -----. --.... -...-. -..-.- -..-.- -----. .--.-- .----. -----. --.... .--.-. -.--.- .---.. -....- -...-. -..--- -..... -----. --..-. -.-... -.---. -----. .--.-. -..-.- -..-.- -----. --.... -...-. -.--.- -....- -----. -..... -.-.-- .----. .--.-. -.--.- -----. -...-. -..--- -.--.- .----. -.-.-- .----. -.--.. -.--.- ------")
+76 STORE_FAST 9 (congrats)
+
+78 LOAD_CONST 8 ("-.-.---- --.-.-.. ---.-... ---..-.- -.-..... --..--.- ---....- ----.... -.-..... ---.---- ---..--. -.-..... --....-- -----..- ----..-. -.-.---- -.-..... ---.--.. ---..-.- ---..-.. -.-..... ----.-.. ---.-... ---.---- ----..-- ---..-.- -.-..... ----.--- ---.-... ---.---- -.-..... ----.--- ---....- ---.--.. ---.-.-- ---..-.- ---..-.. -.-..... ----.-.. ---.-... ---..-.- -.-..... ----.... ---....- ----.-.. ---.-... -.-..... ----.-.. ---.---- -.-..... ---..--- ----..-. ---..-.- ---....- ----.-.. -.-..... ----.... ---.---- ----.--- ---..-.- ----..-. -.-..... ---....- ---.---. ---..-.. -.-..... ----..-- ----.-.. ----..-. ---..-.- ---.---. ---..--- ----.-.. ---.-... -.-.---. -.-..... --.-.-.. ---.-... ---..-.- ---.-..- ----..-. -.-..... ----.... ---.---- ----.--- ---..-.- ----..-. ----..-- -.-..... ---..--- ----..-. ---.---- ----.--- -.-.--.. -.-..... ---....- ---.---. ---..-.. -.-..... ----.--- ---.-..- ----.-.. ---.-... -.-..... ---.-..- ----.-.. -.-.--.. -.-..... ----.-.. ---.-... ---..-.- ---.-..- ----..-. -.-..... ---..-.. ---..-.- ----..-- ----.... ---....- ---.-..- ----..-. -.-.---. -.-..... --.-.-.. ---.-... ---..-.- -----..- -.-..... ----..-. ---..-.- ---.--.- ---....- ---.-..- ---.---. -.-..... ---.-... ---.-..- ---..-.. ---..-.. ---..-.- ---.---. -.-..... ---....- ---.---. ---..-.. -.-..... ---..--- ---.---- ---.---. ---..-.- -.-.--.. -.-..... ---...-. ----.-.- ----.-.. -.-..... ----.-.. ---.-... ---..-.- -.-..... ---..--. ---.-..- ---.---. ---..-.. -.-..... ----.-.. ---.-... ---..-.- ---.-..- ----..-. -.-..... ----..-. ---.-... -----..- ----.-.. ---.-... ---.--.- -.-.---. -.-..... --.-.-.. ---.-... ---..-.- -----..- -.-..... ---...-. ---..-.- ---....- ----.-.. -.-..... ----.-.. ---.-... ---..-.- -.-..... ----.... ---....- ----.-.. ---.-... -.-.---. -.-..... --.-.-.. ---.-... ---..-.- -----..- -.-..... ---.--.- ---....- ---.-.-- ---..-.- -.-..... ---.-..- ----.-.. -.-..... ----.-.. ---.-... ---..-.- ---.-..- ----..-. -.-..... ---.---- ----.--- ---.---. -.-.---. -.-..... -.-.---- --.-.-.. ---.-... ---..-.- -.-..... --..--.- ---....- ----.... -.-..... ---.---- ---..--. -.-..... --....-- -----..- ----..-. -.-.---- -.-..... ---.--.. ---..-.- ---....- ---..-.. ----..-- -.-..... ----.-.. ---.-... ---..-.- ---.--.- -.-..... ----.-.. ---.---- -.-..... ----.-.. ---.-... ---..-.- -.-..... ---..--- ----..-. ---..-.- ---....- ----.-.. -.-..... ----.... ---.---- ----.--- ---..-.- ----..-. -.-..... ---....- ---.---. ---..-.. -.-..... ----..-. ---.-..- ---...-- ---.-... ---..-.- ----..-- -.-..... ----.-.. ---.-... ---....- ----.-.. -.-..... ----.-.. ---.-... ---..-.- -----..- -.-..... ----..-- ---..-.- ---..-.- ---.-.-- -.-.--.. -.-..... ----.--- ---.-... ---....- ----.-.. ---..-.- ----.--. ---..-.- ----..-. -.-..... ----.-.. ---.-... ---..-.- -----..- -.-..... ---.--.- ---....- -----..- -.-..... ---...-. ---..-.- -.-.---. -.-..... --....-. ----.-.- ----.-.. -.-..... ---.-..- ----.-.. -.-..... ---...-- ---.---- ---.--.- ---..-.- ----..-- -.-..... ----.--- ---.-..- ----.-.. ---.-... -.-..... ---....- -.-..... ---...-- ---.---- ----..-- ----.-.. -.-.---. -.-..... --.....- -.-..... ---..--- ----..-. ---..-.- ---....- ----.-.. -.-..... ---...-- ---.---- ----..-- ----.-.. -.-.---. -.-..... --...--. ---.---- ---.--.. ---.--.. ---.---- ----.--- ---.-..- ---.---. ---..--- -.-..... -.-.---- --.-.-.. ---.-... ---..-.- -.-..... --..--.- ---....- ----.... -.-..... ---.---- ---..--. -.-..... --....-- -----..- ----..-. -.-.---- -.-..... ---.-..- ----..-- -.-..... ---.---- ---..--. ----.-.. ---..-.- ---.---. -.-..... ---....- -.-..... ---..-.. ---..-.- ---...-- ---.-..- ----..-- ---.-..- ---.---- ---.---. -.-..... ---.--.- ---....- ---..-.. ---..-.- -.-..... ----.--- ---.-..- ----.-.. ---.-... -.-..... ----..-. ---..-.- ---..--- ----..-. ---..-.- ----.-.. -.-..... ---.-..- ---.---. -.-..... ----..-. ---..-.- ----.-.. ----..-. ---.---- ----..-- ----.... ---..-.- ---...-- ----.-.. -.-.---. -.-..... --....-. ----.-.- ----.-.. -.-.--.. -.-..... ---.--.- ---....- ---.---. -----..- -.-..... ----..-- ----.-.. ---.-..- ---.--.. ---.--.. -.-..... ---.--.- ---....- ---.-.-- ---..-.- -.-..... ----.-.. ---.-... ---..-.- -.-..... ---.-.-. ---.---- ----.-.- ----..-. ---.---. ---..-.- -----..- -.-.--.. -.-..... ---..--. ---.---- ----..-. -.-..... ----.-.. ---.-... ---..-.- -.-..... ----.... ---....- ----.-.. ---.-... -.-..... ---.-..- ----..-- -.-..... ---..--- ----..-. ---..-.- ---....- ----.-.. -.-..... ---....- ---.---. ---..-.. -.-..... ----.-.. ---..-.- ----..-. ----..-. ---.-..- ---...-. ---.--.. ---..-.- -.-.---.")
+80 STORE_FAST 10 (Map_of_Cyr)
+
+82 LOAD_CONST 9 (".-.-.-.. .--.---- .--..-.. .--....- .----..- ..-.--.. ..-..... .---.--- .--..-.- ..-..... .--....- .---..-. .--..-.- ..-..... .--..--- .--....- .---.-.. .--.-... .--..-.- .---..-. .--..-.- .--..-.. ..-..... .--.-... .--..-.- .---..-. .--..-.- ..-..... .---.-.. .--.---- ..-..... .--..--. .--.---- .---..-. .--.--.- ..-..... .--....- ..-..... .--.---. .--..-.- .---.--- ..-..... .--.---- .---..-. .--..--- .--....- .--.---. .--.-..- .---..-- .--.--.- ..-.---. ..-..... .-.-..-- .--.---- .--.--.- .--..-.- .---.-.. .--.-... .--.-..- .--.---. .--..--- ..-..... .--.-... .--.-..- .--..-.. .--..-.. .--..-.- .--.---. ..-.--.. ..-..... .--...-. .---.-.- .---.-.. ..-..... .---.... .--.---- .---.--- .--..-.- .---..-. .--..--. .---.-.- .--.--.. ..-.---. ..-..... .-.-.--- .--..-.- ..-..... .---.--- .--.-..- .--.--.. .--.--.. ..-..... .---.--- .--.---- .---..-. .--.-.-- ..-..... .---.-.. .--.---- .--..--- .--..-.- .---.-.. .--.-... .--..-.- .---..-. ..-..... .---.-.. .--.---- ..-..... .--....- .--...-- .--.-... .--.-..- .--..-.- .---.--. .--..-.- ..-..... .--.---- .---.-.- .---..-. ..-..... .--..-.- .--.---. .--..-.. .---..-- ..-.---. ..-..... .-.-.-.. .--.---- ..-..... .--....- .--...-- .--.-... .--.-..- .--..-.- .---.--. .--..-.- ..-..... .--.---- .---.-.- .---..-. ..-..... .---..-. .---.-.- .--.--.. .--..-.- .---..-. .---..-- .--.-... .--.-..- .---.... ..-.---. ..-..... .-.-.-.. .--.---- ..-..... .--..-.- .--.---. .---..-- .---.-.- .---..-. .--..-.- ..-..... .--.---- .---.-.- .---..-. ..-..... .--..-.- .---..-- .--...-- .--....- .---.... .--..-.- ..-.---. ..-..... .-.-.--- .--..-.- ..-..... .---.--- .--.-..- .--.--.. .--.--.. ..-..... .---.-.. .--....- .--.-.-- .--..-.- ..-..... .---.-.- .---.... ..-..... .--....- ..-..... .--.---. .--..-.- .---.--- ..-..... .--.--.- .--....- .--.---. .---.-.. .--.--.. .--..-.- ..-.--.. ..-..... .--....- .--.---. .--..-.. ..-..... .--...-. .---..-. .--.-..- .--.---. .--..--- ..-..... .--....- .--...-. .--.---- .---.-.- .---.-.. ..-..... .---.-.. .--.-... .--..-.- ..-..... .-..---. .--..-.- .---.--- ..-..... .-.-.--- .--.---- .---..-. .--.--.. .--..-.. ..-..... .---.--- .--.-..- .---.-.. .--.-... ..-..... .---.--- .--.-... .--.-..- .--...-- .--.-... ..-..... .---.--- .--..-.- ..-..... .---..-- .--.-... .--.---- .---.-.- .--.--.. .--..-.. ..-..--- .---.--. .--..-.- ..-..... .--....- .--.--.. .---.--- .--....- .----..- .---..-- ..-..... .--...-. .--..-.- .--..-.- .--.---. ..-..... .---..-. .---.-.- .--.--.. .--..-.- .---..-. .---..-- ..-.---. ..-..... .-.....- .--.---. .--..-.. ..-..... .---.--- .--.-... .--....- .---.-.. ..-..... .--...-. .--..-.- .---.-.. .---.-.. .--..-.- .---..-. ..-..... .--....- ..-..... .--.---. .--....- .--.--.- .--..-.- ..-..... .---.-.. .--.---- ..-..... .---.... .--.-..- .--...-- .--.-.-- ..-.--.. ..-..... .---.-.. .--.-... .--....- .--.---. ..-..... .---.-.. .--.-... .--..-.- ..-..... .--.--.- .--.---- .--.---. .--.-..- .--.-.-- .--..-.- .---..-. ..-..... .--.---- .--..--. ..-..... .---.-.. .--.-... .--.---- .---..-- .--..-.- ..-..... .--..--. .--.---- .--.---- .--.--.. .---..-- ..-..... .-..-..- ..-..... .--..-.. .--..-.- .--....- .--.--.. .---.-.. ..-..... .---.--- .--.-..- .---.-.. .--.-... ..-..... .---..-- .--.---- ..-..... .--.--.. .--.---- .--.---. .--..--- ..-..... .--....- .--..--- .--.---- ..-.---. ..-.---. ..-.---. ..-..... .-.-.--- .--..-.- ..-..... .---..-- .--..-.- .---.--. .--..-.- .--.---. ..-..... .---.--- .--.-..- .--.--.. .--.--.. ..-..... .---..-- .---.--- .--..-.- .--....- .---..-. ..-..... .---.-.. .--.---- ..-..... .---..-- .--..-.- .--..-.- ..-..... .---.-.. .--.-... .--.-..- .---..-- ..-..... .---.-.. .--.-... .---..-. .--.---- .---.-.- .--..--- .--.-... ..-.---. ..-.---. ..-.---.")
+84 STORE_FAST 11 (Vow)
+
+86 LOAD_FAST 3 (game_count)
+88 LOAD_CONST 2 (0)
+90 COMPARE_OP 188 (>=)
+92 POP_JUMP_IF_FALSE 5730 (to 5022)
+
+94 LOAD_CONST 2 (0)
+96 STORE_FAST 12 (switch_tricks)
+
+98 LOAD_FAST 3 (game_count)
+100 LOAD_CONST 10 (1)
+102 BINARY_OP 13 (+=)
+104 STORE_FAST 3 (game_count)
+
+106 LOAD_CONST 5 (True)
+108 STORE_FAST 13 (input_7)
+
+110 LOAD_CONST 5 (True)
+112 STORE_FAST 14 (input_13)
+
+114 LOAD_CONST 5 (True)
+116 STORE_FAST 15 (input_20)
+
+118 LOAD_CONST 5 (True)
+120 STORE_FAST 16 (path_trig)
+
+122 LOAD_CONST 5 (True)
+124 STORE_FAST 17 (hand)
+
+126 LOAD_GLOBAL 17 (NULL + StandardCardDeck)
+128 CALL 0
+130 STORE_FAST 18 (deck)
+
+132 LOAD_GLOBAL 17 (NULL + StandardCardDeck)
+134 LOAD_FAST 17 (hand)
+136 CALL 1
+138 STORE_FAST 19 (player_hand)
+
+140 LOAD_GLOBAL 17 (NULL + StandardCardDeck)
+142 LOAD_FAST 17 (hand)
+144 CALL 1
+146 STORE_FAST 20 (NPC_hand)
+
+148 LOAD_FAST 4 (reset_tricks)
+150 STORE_FAST 21 (player_tricks)
+
+152 LOAD_FAST 4 (reset_tricks)
+154 STORE_FAST 22 (NPC_tricks)
+
+156 LOAD_GLOBAL 19 (NULL + print)
+158 LOAD_CONST 11 ("\n")
+160 LOAD_GLOBAL 20 (CYAN)
+162 FORMAT_SIMPLE
+164 LOAD_CONST 12 ("Welcome to Go Fysh!")
+166 LOAD_GLOBAL 22 (RESET)
+168 FORMAT_SIMPLE
+170 BUILD_STRING 4
+172 CALL 1
+174 POP_TOP
+
+176 LOAD_GLOBAL 19 (NULL + print)
+178 LOAD_CONST 13 ("Shuffling deck...")
+180 CALL 1
+182 POP_TOP
+
+184 LOAD_FAST 18 (deck)
+186 LOAD_ATTR 25 (NULL|self + shuffle)
+188 CALL 0
+190 POP_TOP
+
+192 LOAD_GLOBAL 19 (NULL + print)
+194 LOAD_CONST 14 ("drawing cards...\n")
+196 LOAD_GLOBAL 20 (CYAN)
+198 FORMAT_SIMPLE
+200 BUILD_STRING 2
+202 CALL 1
+204 POP_TOP
+
+206 LOAD_FAST 19 (player_hand)
+208 LOAD_ATTR 27 (NULL|self + add)
+210 LOAD_FAST 18 (deck)
+212 LOAD_ATTR 29 (NULL|self + draw)
+214 LOAD_CONST 4 (7)
+216 CALL 1
+218 CALL 1
+220 POP_TOP
+
+222 LOAD_FAST 20 (NPC_hand)
+224 LOAD_ATTR 27 (NULL|self + add)
+226 LOAD_FAST 18 (deck)
+228 LOAD_ATTR 29 (NULL|self + draw)
+230 LOAD_CONST 4 (7)
+232 CALL 1
+234 CALL 1
+236 POP_TOP
+
+238 LOAD_GLOBAL 19 (NULL + print)
+240 LOAD_CONST 15 ("================================================================")
+242 CALL 1
+244 POP_TOP
+
+246 LOAD_GLOBAL 19 (NULL + print)
+248 LOAD_CONST 11 ("\n")
+250 LOAD_GLOBAL 22 (RESET)
+252 FORMAT_SIMPLE
+254 LOAD_GLOBAL 30 (YELL)
+256 FORMAT_SIMPLE
+258 LOAD_CONST 16 ("Your Starting Hand:")
+260 LOAD_GLOBAL 22 (RESET)
+262 FORMAT_SIMPLE
+264 LOAD_CONST 11 ("\n")
+266 LOAD_FAST 19 (player_hand)
+268 LOAD_CONST 17 ("long")
+270 FORMAT_WITH_SPEC
+272 BUILD_STRING 7
+274 CALL 1
+276 POP_TOP
+
+278 LOAD_GLOBAL 19 (NULL + print)
+280 LOAD_GLOBAL 20 (CYAN)
+282 FORMAT_SIMPLE
+284 CALL 1
+286 POP_TOP
+
+288 LOAD_GLOBAL 19 (NULL + print)
+290 LOAD_CONST 15 ("================================================================")
+292 CALL 1
+294 POP_TOP
+
+296 LOAD_GLOBAL 19 (NULL + print)
+298 LOAD_GLOBAL 22 (RESET)
+300 FORMAT_SIMPLE
+302 CALL 1
+304 POP_TOP
+
+306 LOAD_GLOBAL 33 (NULL + len)
+308 LOAD_FAST 19 (player_hand)
+310 CALL 1
+312 LOAD_CONST 2 (0)
+314 COMPARE_OP 148 (>)
+316 POP_JUMP_IF_FALSE 3993 (to 3726)
+318 LOAD_GLOBAL 33 (NULL + len)
+320 LOAD_FAST 20 (NPC_hand)
+322 CALL 1
+324 LOAD_CONST 2 (0)
+326 COMPARE_OP 148 (>)
+328 POP_JUMP_IF_FALSE 3977 (to 3726)
+
+330 LOAD_GLOBAL 19 (NULL + print)
+332 LOAD_CONST 18 ("Checking for ")
+334 LOAD_GLOBAL 30 (YELL)
+336 FORMAT_SIMPLE
+338 LOAD_CONST 19 ("Your")
+340 LOAD_GLOBAL 22 (RESET)
+342 FORMAT_SIMPLE
+344 LOAD_CONST 20 (" ")
+346 LOAD_GLOBAL 20 (CYAN)
+348 FORMAT_SIMPLE
+350 LOAD_CONST 21 ("Tricks")
+352 LOAD_GLOBAL 22 (RESET)
+354 FORMAT_SIMPLE
+356 LOAD_CONST 22 ("...")
+358 BUILD_STRING 9
+360 CALL 1
+362 POP_TOP
+
+364 LOAD_FAST 21 (player_tricks)
+366 LOAD_GLOBAL 35 (NULL + tricks)
+368 LOAD_FAST 19 (player_hand)
+370 CALL 1
+372 BINARY_OP 13 (+=)
+374 STORE_FAST 21 (player_tricks)
+
+376 LOAD_GLOBAL 19 (NULL + print)
+378 LOAD_CONST 23 ("\nChecking for ")
+380 LOAD_GLOBAL 36 (MAG)
+382 FORMAT_SIMPLE
+384 LOAD_CONST 24 ("Opponent")
+386 LOAD_GLOBAL 22 (RESET)
+388 FORMAT_SIMPLE
+390 LOAD_CONST 20 (" ")
+392 LOAD_GLOBAL 20 (CYAN)
+394 FORMAT_SIMPLE
+396 LOAD_CONST 21 ("Tricks")
+398 LOAD_GLOBAL 22 (RESET)
+400 FORMAT_SIMPLE
+402 LOAD_CONST 22 ("...")
+404 BUILD_STRING 9
+406 CALL 1
+408 POP_TOP
+
+410 LOAD_FAST 22 (NPC_tricks)
+412 LOAD_GLOBAL 35 (NULL + tricks)
+414 LOAD_FAST 20 (NPC_hand)
+416 CALL 1
+418 BINARY_OP 13 (+=)
+420 STORE_FAST 22 (NPC_tricks)
+
+422 LOAD_GLOBAL 33 (NULL + len)
+424 LOAD_FAST 19 (player_hand)
+426 CALL 1
+428 LOAD_CONST 2 (0)
+430 COMPARE_OP 148 (>)
+432 POP_JUMP_IF_FALSE 15 (to 446)
+434 LOAD_GLOBAL 33 (NULL + len)
+436 LOAD_FAST 20 (NPC_hand)
+438 CALL 1
+440 LOAD_CONST 2 (0)
+442 COMPARE_OP 148 (>)
+444 POP_JUMP_IF_TRUE 2 (to 446)
+
+446 JUMP_FORWARD 3837 (to 3726)
+
+448 LOAD_FAST 21 (player_tricks)
+450 LOAD_CONST 4 (7)
+452 COMPARE_OP 88 (==)
+454 POP_JUMP_IF_FALSE 56 (to 504)
+
+456 LOAD_GLOBAL 19 (NULL + print)
+458 LOAD_CONST 11 ("\n")
+460 LOAD_GLOBAL 38 (RED)
+462 FORMAT_SIMPLE
+464 LOAD_CONST 25 ("Player")
+466 LOAD_GLOBAL 22 (RESET)
+468 FORMAT_SIMPLE
+470 LOAD_CONST 20 (" ")
+472 LOAD_GLOBAL 30 (YELL)
+474 FORMAT_SIMPLE
+476 LOAD_CONST 26 ("Score:")
+478 LOAD_GLOBAL 22 (RESET)
+480 FORMAT_SIMPLE
+482 LOAD_CONST 20 (" ")
+484 LOAD_GLOBAL 38 (RED)
+486 FORMAT_SIMPLE
+488 LOAD_FAST 21 (player_tricks)
+490 FORMAT_SIMPLE
+492 LOAD_GLOBAL 22 (RESET)
+494 FORMAT_SIMPLE
+496 LOAD_CONST 11 ("\n")
+498 BUILD_STRING 13
+500 CALL 1
+502 POP_TOP
+504 JUMP_FORWARD 215 (to 708)
+
+506 LOAD_FAST 21 (player_tricks)
+508 LOAD_CONST 27 (13)
+510 COMPARE_OP 88 (==)
+512 POP_JUMP_IF_FALSE 56 (to 562)
+
+514 LOAD_GLOBAL 19 (NULL + print)
+516 LOAD_CONST 11 ("\n")
+518 LOAD_GLOBAL 40 (BLUE)
+520 FORMAT_SIMPLE
+522 LOAD_CONST 25 ("Player")
+524 LOAD_GLOBAL 22 (RESET)
+526 FORMAT_SIMPLE
+528 LOAD_CONST 20 (" ")
+530 LOAD_GLOBAL 30 (YELL)
+532 FORMAT_SIMPLE
+534 LOAD_CONST 26 ("Score:")
+536 LOAD_GLOBAL 22 (RESET)
+538 FORMAT_SIMPLE
+540 LOAD_CONST 20 (" ")
+542 LOAD_GLOBAL 40 (BLUE)
+544 FORMAT_SIMPLE
+546 LOAD_FAST 21 (player_tricks)
+548 FORMAT_SIMPLE
+550 LOAD_GLOBAL 22 (RESET)
+552 FORMAT_SIMPLE
+554 LOAD_CONST 11 ("\n")
+556 BUILD_STRING 13
+558 CALL 1
+560 POP_TOP
+562 JUMP_FORWARD 153 (to 708)
+
+564 LOAD_FAST 21 (player_tricks)
+566 LOAD_CONST 28 (20)
+568 COMPARE_OP 88 (==)
+570 POP_JUMP_IF_FALSE 56 (to 620)
+
+572 LOAD_GLOBAL 19 (NULL + print)
+574 LOAD_CONST 11 ("\n")
+576 LOAD_GLOBAL 42 (GREEN)
+578 FORMAT_SIMPLE
+580 LOAD_CONST 25 ("Player")
+582 LOAD_GLOBAL 22 (RESET)
+584 FORMAT_SIMPLE
+586 LOAD_CONST 20 (" ")
+588 LOAD_GLOBAL 30 (YELL)
+590 FORMAT_SIMPLE
+592 LOAD_CONST 26 ("Score:")
+594 LOAD_GLOBAL 22 (RESET)
+596 FORMAT_SIMPLE
+598 LOAD_CONST 20 (" ")
+600 LOAD_GLOBAL 42 (GREEN)
+602 FORMAT_SIMPLE
+604 LOAD_FAST 21 (player_tricks)
+606 FORMAT_SIMPLE
+608 LOAD_GLOBAL 22 (RESET)
+610 FORMAT_SIMPLE
+612 LOAD_CONST 11 ("\n")
+614 BUILD_STRING 13
+616 CALL 1
+618 POP_TOP
+620 JUMP_FORWARD 91 (to 708)
+
+622 LOAD_FAST 21 (player_tricks)
+624 LOAD_CONST 29 (26)
+626 COMPARE_OP 88 (==)
+628 POP_JUMP_IF_FALSE 56 (to 678)
+
+630 LOAD_GLOBAL 19 (NULL + print)
+632 LOAD_CONST 11 ("\n")
+634 LOAD_GLOBAL 44 (BW)
+636 FORMAT_SIMPLE
+638 LOAD_CONST 25 ("Player")
+640 LOAD_GLOBAL 22 (RESET)
+642 FORMAT_SIMPLE
+644 LOAD_CONST 20 (" ")
+646 LOAD_GLOBAL 30 (YELL)
+648 FORMAT_SIMPLE
+650 LOAD_CONST 26 ("Score:")
+652 LOAD_GLOBAL 22 (RESET)
+654 FORMAT_SIMPLE
+656 LOAD_CONST 20 (" ")
+658 LOAD_GLOBAL 44 (BW)
+660 FORMAT_SIMPLE
+662 LOAD_FAST 21 (player_tricks)
+664 FORMAT_SIMPLE
+666 LOAD_GLOBAL 22 (RESET)
+668 FORMAT_SIMPLE
+670 LOAD_CONST 11 ("\n")
+672 BUILD_STRING 13
+674 CALL 1
+676 POP_TOP
+678 JUMP_FORWARD 29 (to 708)
+
+680 LOAD_GLOBAL 19 (NULL + print)
+682 LOAD_CONST 11 ("\n")
+684 LOAD_GLOBAL 30 (YELL)
+686 FORMAT_SIMPLE
+688 LOAD_CONST 30 ("Player Score:")
+690 LOAD_GLOBAL 22 (RESET)
+692 FORMAT_SIMPLE
+694 LOAD_CONST 20 (" ")
+696 LOAD_FAST 21 (player_tricks)
+698 FORMAT_SIMPLE
+700 LOAD_CONST 11 ("\n")
+702 BUILD_STRING 7
+704 CALL 1
+706 POP_TOP
+
+708 LOAD_FAST 22 (NPC_tricks)
+710 LOAD_CONST 4 (7)
+712 COMPARE_OP 88 (==)
+714 POP_JUMP_IF_FALSE 55 (to 762)
+
+716 LOAD_GLOBAL 19 (NULL + print)
+718 LOAD_GLOBAL 38 (RED)
+720 FORMAT_SIMPLE
+722 LOAD_CONST 31 ("ArtSym")
+724 LOAD_GLOBAL 22 (RESET)
+726 FORMAT_SIMPLE
+728 LOAD_CONST 20 (" ")
+730 LOAD_GLOBAL 36 (MAG)
+732 FORMAT_SIMPLE
+734 LOAD_CONST 26 ("Score:")
+736 LOAD_GLOBAL 22 (RESET)
+738 FORMAT_SIMPLE
+740 LOAD_CONST 20 (" ")
+742 LOAD_GLOBAL 38 (RED)
+744 FORMAT_SIMPLE
+746 LOAD_FAST 22 (NPC_tricks)
+748 FORMAT_SIMPLE
+750 LOAD_GLOBAL 22 (RESET)
+752 FORMAT_SIMPLE
+754 LOAD_CONST 11 ("\n")
+756 BUILD_STRING 12
+758 CALL 1
+760 POP_TOP
+762 JUMP_FORWARD 211 (to 958)
+
+764 LOAD_FAST 22 (NPC_tricks)
+766 LOAD_CONST 27 (13)
+768 COMPARE_OP 88 (==)
+770 POP_JUMP_IF_FALSE 55 (to 818)
+
+772 LOAD_GLOBAL 19 (NULL + print)
+774 LOAD_GLOBAL 40 (BLUE)
+776 FORMAT_SIMPLE
+778 LOAD_CONST 31 ("ArtSym")
+780 LOAD_GLOBAL 22 (RESET)
+782 FORMAT_SIMPLE
+784 LOAD_CONST 20 (" ")
+786 LOAD_GLOBAL 36 (MAG)
+788 FORMAT_SIMPLE
+790 LOAD_CONST 26 ("Score:")
+792 LOAD_GLOBAL 22 (RESET)
+794 FORMAT_SIMPLE
+796 LOAD_CONST 20 (" ")
+798 LOAD_GLOBAL 40 (BLUE)
+800 FORMAT_SIMPLE
+802 LOAD_FAST 22 (NPC_tricks)
+804 FORMAT_SIMPLE
+806 LOAD_GLOBAL 22 (RESET)
+808 FORMAT_SIMPLE
+810 LOAD_CONST 11 ("\n")
+812 BUILD_STRING 12
+814 CALL 1
+816 POP_TOP
+818 JUMP_FORWARD 150 (to 958)
+
+820 LOAD_FAST 22 (NPC_tricks)
+822 LOAD_CONST 28 (20)
+824 COMPARE_OP 88 (==)
+826 POP_JUMP_IF_FALSE 55 (to 874)
+
+828 LOAD_GLOBAL 19 (NULL + print)
+830 LOAD_GLOBAL 42 (GREEN)
+832 FORMAT_SIMPLE
+834 LOAD_CONST 31 ("ArtSym")
+836 LOAD_GLOBAL 22 (RESET)
+838 FORMAT_SIMPLE
+840 LOAD_CONST 20 (" ")
+842 LOAD_GLOBAL 36 (MAG)
+844 FORMAT_SIMPLE
+846 LOAD_CONST 26 ("Score:")
+848 LOAD_GLOBAL 22 (RESET)
+850 FORMAT_SIMPLE
+852 LOAD_CONST 20 (" ")
+854 LOAD_GLOBAL 42 (GREEN)
+856 FORMAT_SIMPLE
+858 LOAD_FAST 22 (NPC_tricks)
+860 FORMAT_SIMPLE
+862 LOAD_GLOBAL 22 (RESET)
+864 FORMAT_SIMPLE
+866 LOAD_CONST 11 ("\n")
+868 BUILD_STRING 12
+870 CALL 1
+872 POP_TOP
+874 JUMP_FORWARD 89 (to 958)
+
+876 LOAD_FAST 22 (NPC_tricks)
+878 LOAD_CONST 29 (26)
+880 COMPARE_OP 88 (==)
+882 POP_JUMP_IF_FALSE 55 (to 930)
+
+884 LOAD_GLOBAL 19 (NULL + print)
+886 LOAD_GLOBAL 44 (BW)
+888 FORMAT_SIMPLE
+890 LOAD_CONST 31 ("ArtSym")
+892 LOAD_GLOBAL 22 (RESET)
+894 FORMAT_SIMPLE
+896 LOAD_CONST 20 (" ")
+898 LOAD_GLOBAL 36 (MAG)
+900 FORMAT_SIMPLE
+902 LOAD_CONST 26 ("Score:")
+904 LOAD_GLOBAL 22 (RESET)
+906 FORMAT_SIMPLE
+908 LOAD_CONST 20 (" ")
+910 LOAD_GLOBAL 44 (BW)
+912 FORMAT_SIMPLE
+914 LOAD_FAST 22 (NPC_tricks)
+916 FORMAT_SIMPLE
+918 LOAD_GLOBAL 22 (RESET)
+920 FORMAT_SIMPLE
+922 LOAD_CONST 11 ("\n")
+924 BUILD_STRING 12
+926 CALL 1
+928 POP_TOP
+930 JUMP_FORWARD 28 (to 958)
+
+932 LOAD_GLOBAL 19 (NULL + print)
+934 LOAD_GLOBAL 36 (MAG)
+936 FORMAT_SIMPLE
+938 LOAD_CONST 32 ("ArtSym Score:")
+940 LOAD_GLOBAL 22 (RESET)
+942 FORMAT_SIMPLE
+944 LOAD_CONST 20 (" ")
+946 LOAD_FAST 22 (NPC_tricks)
+948 FORMAT_SIMPLE
+950 LOAD_CONST 11 ("\n")
+952 BUILD_STRING 6
+954 CALL 1
+956 POP_TOP
+
+958 LOAD_FAST 3 (game_count)
+960 LOAD_CONST 4 (7)
+962 COMPARE_OP 188 (>=)
+964 POP_JUMP_IF_FALSE 89 (to 1040)
+966 LOAD_FAST 5 (game_7)
+968 TO_BOOL
+970 POP_JUMP_IF_FALSE 82 (to 1040)
+
+972 LOAD_GLOBAL 19 (NULL + print)
+974 LOAD_GLOBAL 30 (YELL)
+976 FORMAT_SIMPLE
+978 LOAD_CONST 33 ("Your(")
+980 LOAD_GLOBAL 22 (RESET)
+982 FORMAT_SIMPLE
+984 LOAD_GLOBAL 38 (RED)
+986 FORMAT_SIMPLE
+988 LOAD_CONST 34 ("?")
+990 LOAD_GLOBAL 22 (RESET)
+992 FORMAT_SIMPLE
+994 LOAD_GLOBAL 30 (YELL)
+996 FORMAT_SIMPLE
+998 LOAD_CONST 35 (")")
+1000 LOAD_GLOBAL 22 (RESET)
+1002 FORMAT_SIMPLE
+1004 LOAD_CONST 20 (" ")
+1006 LOAD_GLOBAL 38 (RED)
+1008 FORMAT_SIMPLE
+1010 LOAD_CONST 36 ("HAND")
+1012 LOAD_GLOBAL 22 (RESET)
+1014 FORMAT_SIMPLE
+1016 LOAD_GLOBAL 30 (YELL)
+1018 FORMAT_SIMPLE
+1020 LOAD_CONST 37 (":")
+1022 LOAD_GLOBAL 22 (RESET)
+1024 FORMAT_SIMPLE
+1026 LOAD_CONST 11 ("\n")
+1028 LOAD_FAST 19 (player_hand)
+1030 LOAD_CONST 17 ("long")
+1032 FORMAT_WITH_SPEC
+1034 BUILD_STRING 18
+1036 CALL 1
+1038 POP_TOP
+1040 JUMP_FORWARD 28 (to 1068)
+
+1042 LOAD_GLOBAL 19 (NULL + print)
+1044 LOAD_GLOBAL 30 (YELL)
+1046 FORMAT_SIMPLE
+1048 LOAD_CONST 38 ("Your Hand:")
+1050 LOAD_GLOBAL 22 (RESET)
+1052 FORMAT_SIMPLE
+1054 LOAD_CONST 11 ("\n")
+1056 LOAD_FAST 19 (player_hand)
+1058 LOAD_CONST 17 ("long")
+1060 FORMAT_WITH_SPEC
+1062 BUILD_STRING 5
+1064 CALL 1
+1066 POP_TOP
+
+1068 LOAD_GLOBAL 47 (NULL + input)
+1070 LOAD_CONST 39 ("\nWhat will you ask for? ")
+1072 CALL 1
+1074 LOAD_ATTR 49 (NULL|self + capitalize)
+1076 CALL 0
+1078 STORE_DEREF 28 (response)
+
+1080 LOAD_DEREF 28 (response)
+1082 LOAD_CONST 40 ("the path")
+1084 LOAD_ATTR 49 (NULL|self + capitalize)
+1086 CALL 0
+1088 COMPARE_OP 88 (==)
+1090 POP_JUMP_IF_FALSE 16 (to 1098)
+1092 LOAD_DEREF 28 (response)
+1094 LOAD_ATTR 51 (NULL|self + title)
+1096 CALL 0
+1098 JUMP_FORWARD 1 (to 1102)
+1100 LOAD_DEREF 28 (response)
+1102 STORE_DEREF 28 (response)
+
+1104 LOAD_DEREF 28 (response)
+1106 LOAD_CONST 41 ("The Path")
+1108 COMPARE_OP 88 (==)
+1110 POP_JUMP_IF_FALSE 435 (to 1470)
+
+1112 LOAD_FAST 3 (game_count)
+1114 LOAD_CONST 4 (7)
+1116 COMPARE_OP 188 (>=)
+1118 POP_JUMP_IF_FALSE 35 (to 1148)
+1120 LOAD_FAST 13 (input_7)
+1122 TO_BOOL
+1124 POP_JUMP_IF_FALSE 28 (to 1148)
+
+1126 LOAD_GLOBAL 19 (NULL + print)
+1128 LOAD_GLOBAL 38 (RED)
+1130 FORMAT_SIMPLE
+1132 LOAD_CONST 42 ("\nAnts... Mere Ants...")
+1134 LOAD_GLOBAL 22 (RESET)
+1136 FORMAT_SIMPLE
+1138 BUILD_STRING 3
+1140 CALL 1
+1142 POP_TOP
+
+1144 LOAD_CONST 43 (False)
+1146 STORE_FAST 13 (input_7)
+1148 JUMP_FORWARD 394 (to 1472)
+
+1150 LOAD_FAST 3 (game_count)
+1152 LOAD_CONST 27 (13)
+1154 COMPARE_OP 188 (>=)
+1156 POP_JUMP_IF_FALSE 35 (to 1186)
+1158 LOAD_FAST 14 (input_13)
+1160 TO_BOOL
+1162 POP_JUMP_IF_FALSE 28 (to 1186)
+
+1164 LOAD_GLOBAL 19 (NULL + print)
+1166 LOAD_GLOBAL 40 (BLUE)
+1168 FORMAT_SIMPLE
+1170 LOAD_CONST 44 ("\nThe pathways into darkness may yet be what you must seek.")
+1172 LOAD_GLOBAL 22 (RESET)
+1174 FORMAT_SIMPLE
+1176 BUILD_STRING 3
+1178 CALL 1
+1180 POP_TOP
+
+1182 LOAD_CONST 43 (False)
+1184 STORE_FAST 14 (input_13)
+1186 JUMP_FORWARD 353 (to 1472)
+
+1188 LOAD_FAST 3 (game_count)
+1190 LOAD_CONST 28 (20)
+1192 COMPARE_OP 188 (>=)
+1194 POP_JUMP_IF_FALSE 35 (to 1224)
+1196 LOAD_FAST 15 (input_20)
+1198 TO_BOOL
+1200 POP_JUMP_IF_FALSE 28 (to 1224)
+
+1202 LOAD_GLOBAL 19 (NULL + print)
+1204 LOAD_GLOBAL 42 (GREEN)
+1206 FORMAT_SIMPLE
+1208 LOAD_CONST 45 ("\nSEEK THE PATH\nBEAT THE PATH\nEAT THE PATH\nMAKE THE PATH")
+1210 LOAD_GLOBAL 22 (RESET)
+1212 FORMAT_SIMPLE
+1214 BUILD_STRING 3
+1216 CALL 1
+1218 POP_TOP
+
+1220 LOAD_CONST 43 (False)
+1222 STORE_FAST 15 (input_20)
+1224 JUMP_FORWARD 312 (to 1472)
+
+1226 LOAD_FAST 16 (path_trig)
+1228 TO_BOOL
+1230 POP_JUMP_IF_FALSE 28 (to 1254)
+
+1232 LOAD_GLOBAL 19 (NULL + print)
+1234 LOAD_GLOBAL 44 (BW)
+1236 FORMAT_SIMPLE
+1238 LOAD_CONST 46 ("\nThrough him he enlightened those who were in darkness because of forgetfulness and amnesia and sleep. He enlightened them and gave them a path. And that path is the truth which he taught them...\nHe became a path for those who went astray and knowledge to those who were ignorant, a discovery for those who sought, and a support for those who tremble, a purity for those who were defiled.\n")
+1240 LOAD_GLOBAL 22 (RESET)
+1242 FORMAT_SIMPLE
+1244 BUILD_STRING 3
+1246 CALL 1
+1248 POP_TOP
+
+1250 LOAD_CONST 43 (False)
+1252 STORE_FAST 16 (path_trig)
+1254 JUMP_FORWARD 277 (to 1472)
+
+1256 LOAD_GLOBAL 47 (NULL + input)
+1258 LOAD_CONST 11 ("\n")
+1260 LOAD_GLOBAL 36 (MAG)
+1262 FORMAT_SIMPLE
+1264 LOAD_CONST 47 ("You seek the path, you say? Are you prepared for the journey?")
+1266 LOAD_GLOBAL 22 (RESET)
+1268 FORMAT_SIMPLE
+1270 LOAD_CONST 48 (" (")
+1272 LOAD_GLOBAL 40 (BLUE)
+1274 FORMAT_SIMPLE
+1276 LOAD_CONST 49 ("Y")
+1278 LOAD_GLOBAL 22 (RESET)
+1280 FORMAT_SIMPLE
+1282 LOAD_CONST 50 ("/")
+1284 LOAD_GLOBAL 38 (RED)
+1286 FORMAT_SIMPLE
+1288 LOAD_CONST 51 ("N")
+1290 LOAD_GLOBAL 22 (RESET)
+1292 FORMAT_SIMPLE
+1294 LOAD_CONST 35 (")")
+1296 BUILD_STRING 13
+1298 CALL 1
+1300 LOAD_ATTR 49 (NULL|self + capitalize)
+1302 CALL 0
+1304 STORE_DEREF 28 (response)
+
+1306 LOAD_DEREF 28 (response)
+1308 LOAD_CONST 49 ("Y")
+1310 COMPARE_OP 88 (==)
+1312 POP_JUMP_IF_FALSE 178 (to 1450)
+
+1314 LOAD_GLOBAL 19 (NULL + print)
+1316 LOAD_GLOBAL 44 (BW)
+1318 FORMAT_SIMPLE
+1320 LOAD_CONST 11 ("\n")
+1322 LOAD_FAST 8 (message)
+1324 FORMAT_SIMPLE
+1326 LOAD_CONST 11 ("\n")
+1328 LOAD_GLOBAL 22 (RESET)
+1330 FORMAT_SIMPLE
+1332 BUILD_STRING 5
+1334 CALL 1
+1336 POP_TOP
+
+1338 NOP
+
+1340 LOAD_GLOBAL 53 (NULL + open)
+1342 LOAD_GLOBAL 0 (os)
+1344 LOAD_ATTR 54 (path)
+1346 LOAD_ATTR 57 (NULL|self + join)
+1348 LOAD_FAST 2 (safe_dir)
+1350 LOAD_CONST 52 ("the_path.txt")
+1352 CALL 2
+1354 LOAD_CONST 53 ("w")
+1356 CALL 2
+1358 BEFORE_WITH
+1360 STORE_FAST 23 (file)
+
+1362 LOAD_FAST 23 (file)
+1364 LOAD_ATTR 59 (NULL|self + write)
+1366 LOAD_FAST 8 (message)
+1368 CALL 1
+1370 POP_TOP
+
+1372 LOAD_CONST 0 (None)
+1374 LOAD_CONST 0 (None)
+1376 LOAD_CONST 0 (None)
+1378 CALL 2
+1380 POP_TOP
+
+1382 LOAD_GLOBAL 19 (NULL + print)
+1384 LOAD_GLOBAL 38 (RED)
+1386 FORMAT_SIMPLE
+1388 LOAD_CONST 55 ("HE")
+1390 LOAD_GLOBAL 22 (RESET)
+1392 FORMAT_SIMPLE
+1394 LOAD_CONST 20 (" ")
+1396 LOAD_GLOBAL 40 (BLUE)
+1398 FORMAT_SIMPLE
+1400 LOAD_CONST 56 ("WILL")
+1402 LOAD_GLOBAL 22 (RESET)
+1404 FORMAT_SIMPLE
+1406 LOAD_CONST 20 (" ")
+1408 LOAD_GLOBAL 42 (GREEN)
+1410 FORMAT_SIMPLE
+1412 LOAD_CONST 57 ("BE")
+1414 LOAD_GLOBAL 22 (RESET)
+1416 FORMAT_SIMPLE
+1418 LOAD_CONST 20 (" ")
+1420 LOAD_GLOBAL 44 (BW)
+1422 FORMAT_SIMPLE
+1424 LOAD_CONST 58 ("WAITING")
+1426 LOAD_GLOBAL 22 (RESET)
+1428 FORMAT_SIMPLE
+1430 LOAD_CONST 59 (".")
+1432 LOAD_GLOBAL 62 (BLACK)
+1434 FORMAT_SIMPLE
+1436 LOAD_CONST 60 ("He.")
+1438 LOAD_GLOBAL 22 (RESET)
+1440 FORMAT_SIMPLE
+1442 LOAD_CONST 11 ("\n")
+1444 BUILD_STRING 20
+1446 CALL 1
+1448 POP_TOP
+1450 JUMP_FORWARD 25 (to 1472)
+
+1452 LOAD_GLOBAL 19 (NULL + print)
+1454 LOAD_GLOBAL 44 (BW)
+1456 FORMAT_SIMPLE
+1458 LOAD_CONST 61 ("\nAnd I will bring the blind by a way that they knew not; I will lead them in paths that they have not known: I will make darkness light before them, and crooked things straight. These things will I do unto them, and not forsake them.")
+1460 LOAD_GLOBAL 22 (RESET)
+1462 FORMAT_SIMPLE
+1464 LOAD_CONST 11 ("\n")
+1466 BUILD_STRING 4
+1468 CALL 1
+1470 POP_TOP
+
+1472 LOAD_DEREF 28 (response)
+1474 LOAD_GLOBAL 64 (StandardCard)
+1476 LOAD_ATTR 66 (RANKVALUES)
+1478 LOAD_ATTR 69 (NULL|self + keys)
+1480 CALL 0
+1482 CONTAINS_OP 0 (in)
+1484 POP_JUMP_IF_FALSE 27 (to 1510)
+1486 LOAD_GLOBAL 71 (NULL + any)
+1488 LOAD_FAST 28 (response)
+1490 BUILD_TUPLE 1
+1492 LOAD_CONST 62 (code object <genexpr>)
+1494 MAKE_FUNCTION
+1496 SET_FUNCTION_ATTRIBUTE 8
+1498 LOAD_FAST 19 (player_hand)
+1500 GET_ITER
+1502 CALL 0
+1504 CALL 1
+1506 TO_BOOL
+1508 POP_JUMP_IF_TRUE 551 (to 1932)
+
+1510 LOAD_GLOBAL 47 (NULL + input)
+1512 LOAD_CONST 63 ("Invalid Input, Please Try Again: ")
+1514 CALL 1
+1516 LOAD_ATTR 49 (NULL|self + capitalize)
+1518 CALL 0
+1520 STORE_DEREF 28 (response)
+
+1522 LOAD_DEREF 28 (response)
+1524 LOAD_CONST 40 ("the path")
+1526 LOAD_ATTR 49 (NULL|self + capitalize)
+1528 CALL 0
+1530 COMPARE_OP 88 (==)
+1532 POP_JUMP_IF_FALSE 16 (to 1540)
+1534 LOAD_DEREF 28 (response)
+1536 LOAD_ATTR 51 (NULL|self + title)
+1538 CALL 0
+1540 JUMP_FORWARD 1 (to 1544)
+1542 LOAD_DEREF 28 (response)
+1544 STORE_DEREF 28 (response)
+
+1546 LOAD_DEREF 28 (response)
+1548 LOAD_CONST 41 ("The Path")
+1550 COMPARE_OP 88 (==)
+1552 POP_JUMP_IF_FALSE 415 (to 1888)
+
+1554 LOAD_FAST 3 (game_count)
+1556 LOAD_CONST 4 (7)
+1558 COMPARE_OP 188 (>=)
+1560 POP_JUMP_IF_FALSE 33 (to 1586)
+1562 LOAD_FAST 13 (input_7)
+1564 TO_BOOL
+1566 POP_JUMP_IF_FALSE 26 (to 1586)
+
+1568 LOAD_GLOBAL 19 (NULL + print)
+1570 LOAD_GLOBAL 38 (RED)
+1572 FORMAT_SIMPLE
+1574 LOAD_CONST 42 ("\nAnts... Mere Ants...")
+1576 LOAD_GLOBAL 22 (RESET)
+1578 FORMAT_SIMPLE
+1580 BUILD_STRING 3
+1582 CALL 1
+1584 POP_TOP
+1586 JUMP_FORWARD 376 (to 1890)
+
+1588 LOAD_FAST 3 (game_count)
+1590 LOAD_CONST 27 (13)
+1592 COMPARE_OP 188 (>=)
+1594 POP_JUMP_IF_FALSE 33 (to 1620)
+1596 LOAD_FAST 14 (input_13)
+1598 TO_BOOL
+1600 POP_JUMP_IF_FALSE 26 (to 1620)
+
+1602 LOAD_GLOBAL 19 (NULL + print)
+1604 LOAD_GLOBAL 40 (BLUE)
+1606 FORMAT_SIMPLE
+1608 LOAD_CONST 44 ("\nThe pathways into darkness may yet be what you must seek.")
+1610 LOAD_GLOBAL 22 (RESET)
+1612 FORMAT_SIMPLE
+1614 BUILD_STRING 3
+1616 CALL 1
+1618 POP_TOP
+1620 JUMP_FORWARD 337 (to 1890)
+
+1622 LOAD_FAST 3 (game_count)
+1624 LOAD_CONST 28 (20)
+1626 COMPARE_OP 188 (>=)
+1628 POP_JUMP_IF_FALSE 33 (to 1654)
+1630 LOAD_FAST 15 (input_20)
+1632 TO_BOOL
+1634 POP_JUMP_IF_FALSE 26 (to 1654)
+
+1636 LOAD_GLOBAL 19 (NULL + print)
+1638 LOAD_GLOBAL 42 (GREEN)
+1640 FORMAT_SIMPLE
+1642 LOAD_CONST 45 ("\nSEEK THE PATH\nBEAT THE PATH\nEAT THE PATH\nMAKE THE PATH")
+1644 LOAD_GLOBAL 22 (RESET)
+1646 FORMAT_SIMPLE
+1648 BUILD_STRING 3
+1650 CALL 1
+1652 POP_TOP
+1654 JUMP_FORWARD 298 (to 1890)
+
+1656 LOAD_FAST 16 (path_trig)
+1658 TO_BOOL
+1660 POP_JUMP_IF_FALSE 28 (to 1684)
+
+1662 LOAD_GLOBAL 19 (NULL + print)
+1664 LOAD_GLOBAL 44 (BW)
+1666 FORMAT_SIMPLE
+1668 LOAD_CONST 46 ("\nThrough him he enlightened those who were in darkness because of forgetfulness and amnesia and sleep. He enlightened them and gave them a path. And that path is the truth which he taught them...\nHe became a path for those who went astray and knowledge to those who were ignorant, a discovery for those who sought, and a support for those who tremble, a purity for those who were defiled.\n")
+1670 LOAD_GLOBAL 22 (RESET)
+1672 FORMAT_SIMPLE
+1674 BUILD_STRING 3
+1676 CALL 1
+1678 POP_TOP
+
+1680 LOAD_CONST 43 (False)
+1682 STORE_FAST 16 (path_trig)
+1684 JUMP_FORWARD 263 (to 1890)
+
+1686 LOAD_GLOBAL 47 (NULL + input)
+1688 LOAD_CONST 11 ("\n")
+1690 LOAD_GLOBAL 36 (MAG)
+1692 FORMAT_SIMPLE
+1694 LOAD_CONST 47 ("You seek the path, you say? Are you prepared for the journey?")
+1696 LOAD_GLOBAL 22 (RESET)
+1698 FORMAT_SIMPLE
+1700 LOAD_CONST 48 (" (")
+1702 LOAD_GLOBAL 40 (BLUE)
+1704 FORMAT_SIMPLE
+1706 LOAD_CONST 49 ("Y")
+1708 LOAD_GLOBAL 22 (RESET)
+1710 FORMAT_SIMPLE
+1712 LOAD_CONST 50 ("/")
+1714 LOAD_GLOBAL 38 (RED)
+1716 FORMAT_SIMPLE
+1718 LOAD_CONST 51 ("N")
+1720 LOAD_GLOBAL 22 (RESET)
+1722 FORMAT_SIMPLE
+1724 LOAD_CONST 35 (")")
+1726 BUILD_STRING 13
+1728 CALL 1
+1730 LOAD_ATTR 49 (NULL|self + capitalize)
+1732 CALL 0
+1734 STORE_DEREF 28 (response)
+
+1736 LOAD_DEREF 28 (response)
+1738 LOAD_CONST 49 ("Y")
+1740 COMPARE_OP 88 (==)
+1742 POP_JUMP_IF_FALSE 164 (to 1868)
+
+1744 LOAD_GLOBAL 19 (NULL + print)
+1746 LOAD_GLOBAL 44 (BW)
+1748 FORMAT_SIMPLE
+1750 LOAD_CONST 11 ("\n")
+1752 LOAD_FAST 8 (message)
+1754 FORMAT_SIMPLE
+1756 LOAD_CONST 11 ("\n")
+1758 LOAD_GLOBAL 22 (RESET)
+1760 FORMAT_SIMPLE
+1762 BUILD_STRING 5
+1764 CALL 1
+1766 POP_TOP
+
+1768 NOP
+
+1770 LOAD_GLOBAL 53 (NULL + open)
+1772 LOAD_GLOBAL 0 (os)
+1774 LOAD_ATTR 54 (path)
+1776 LOAD_ATTR 57 (NULL|self + join)
+1778 LOAD_FAST 2 (safe_dir)
+1780 LOAD_CONST 52 ("the_path.txt")
+1782 CALL 2
+1784 LOAD_CONST 53 ("w")
+1786 CALL 2
+1788 BEFORE_WITH
+1790 STORE_FAST 23 (file)
+
+1792 LOAD_FAST 23 (file)
+1794 LOAD_ATTR 59 (NULL|self + write)
+1796 LOAD_FAST 8 (message)
+1798 CALL 1
+1800 POP_TOP
+
+1802 LOAD_CONST 0 (None)
+1804 LOAD_CONST 0 (None)
+1806 LOAD_CONST 0 (None)
+1808 CALL 2
+1810 POP_TOP
+
+1812 LOAD_GLOBAL 19 (NULL + print)
+1814 LOAD_GLOBAL 38 (RED)
+1816 FORMAT_SIMPLE
+1818 LOAD_CONST 55 ("HE")
+1820 LOAD_GLOBAL 22 (RESET)
+1822 FORMAT_SIMPLE
+1824 LOAD_CONST 20 (" ")
+1826 LOAD_GLOBAL 40 (BLUE)
+1828 FORMAT_SIMPLE
+1830 LOAD_CONST 56 ("WILL")
+1832 LOAD_GLOBAL 22 (RESET)
+1834 FORMAT_SIMPLE
+1836 LOAD_CONST 20 (" ")
+1838 LOAD_GLOBAL 42 (GREEN)
+1840 FORMAT_SIMPLE
+1842 LOAD_CONST 57 ("BE")
+1844 LOAD_GLOBAL 22 (RESET)
+1846 FORMAT_SIMPLE
+1848 LOAD_CONST 20 (" ")
+1850 LOAD_GLOBAL 44 (BW)
+1852 FORMAT_SIMPLE
+1854 LOAD_CONST 58 ("WAITING")
+1856 LOAD_GLOBAL 22 (RESET)
+1858 FORMAT_SIMPLE
+1860 LOAD_CONST 64 (".\n")
+1862 BUILD_STRING 16
+1864 CALL 1
+1866 POP_TOP
+1868 JUMP_FORWARD 25 (to 1890)
+
+1870 LOAD_GLOBAL 19 (NULL + print)
+1872 LOAD_GLOBAL 44 (BW)
+1874 FORMAT_SIMPLE
+1876 LOAD_CONST 61 ("\nAnd I will bring the blind by a way that they knew not; I will lead them in paths that they have not known: I will make darkness light before them, and crooked things straight. These things will I do unto them, and not forsake them.")
+1878 LOAD_GLOBAL 22 (RESET)
+1880 FORMAT_SIMPLE
+1882 LOAD_CONST 11 ("\n")
+1884 BUILD_STRING 4
+1886 CALL 1
+1888 POP_TOP
+
+1890 LOAD_DEREF 28 (response)
+1892 LOAD_GLOBAL 64 (StandardCard)
+1894 LOAD_ATTR 66 (RANKVALUES)
+1896 LOAD_ATTR 69 (NULL|self + keys)
+1898 CALL 0
+1900 CONTAINS_OP 0 (in)
+1902 POP_JUMP_IF_TRUE 3 (to 1906)
+1904 JUMP_BACKWARD 522 (to 1510)
+1906 LOAD_GLOBAL 71 (NULL + any)
+1908 LOAD_FAST 28 (response)
+1910 BUILD_TUPLE 1
+1912 LOAD_CONST 62 (code object <genexpr>)
+1914 MAKE_FUNCTION
+1916 SET_FUNCTION_ATTRIBUTE 8
+1918 LOAD_FAST 19 (player_hand)
+1920 GET_ITER
+1922 CALL 0
+1924 CALL 1
+1926 TO_BOOL
+1928 POP_JUMP_IF_TRUE 3 (to 1932)
+1930 JUMP_BACKWARD 551 (to 1510)
+
+1932 LOAD_GLOBAL 19 (NULL + print)
+1934 LOAD_CONST 11 ("\n")
+1936 LOAD_GLOBAL 30 (YELL)
+1938 FORMAT_SIMPLE
+1940 LOAD_CONST 65 ("User:")
+1942 LOAD_GLOBAL 22 (RESET)
+1944 FORMAT_SIMPLE
+1946 LOAD_CONST 66 (" Do you have any ")
+1948 LOAD_DEREF 28 (response)
+1950 FORMAT_SIMPLE
+1952 LOAD_CONST 67 ("s?\n")
+1954 BUILD_STRING 7
+1956 CALL 1
+1958 POP_TOP
+
+1960 LOAD_GLOBAL 71 (NULL + any)
+1962 LOAD_FAST 28 (response)
+1964 BUILD_TUPLE 1
+1966 LOAD_CONST 68 (code object <genexpr>)
+1968 MAKE_FUNCTION
+1970 SET_FUNCTION_ATTRIBUTE 8
+1972 LOAD_FAST 20 (NPC_hand)
+1974 GET_ITER
+1976 CALL 0
+1978 CALL 1
+1980 TO_BOOL
+1982 POP_JUMP_IF_FALSE 112 (to 2092)
+
+1984 LOAD_DEREF 28 (response)
+1986 LOAD_CONST 69 ("8")
+1988 COMPARE_OP 88 (==)
+1990 POP_JUMP_IF_TRUE 6 (to 2000)
+1992 LOAD_DEREF 28 (response)
+1994 LOAD_CONST 70 ("Ace")
+1996 COMPARE_OP 88 (==)
+1998 POP_JUMP_IF_FALSE 29 (to 2026)
+
+2000 LOAD_GLOBAL 19 (NULL + print)
+2002 LOAD_GLOBAL 36 (MAG)
+2004 FORMAT_SIMPLE
+2006 LOAD_CONST 71 ("ArtSym:")
+2008 LOAD_GLOBAL 22 (RESET)
+2010 FORMAT_SIMPLE
+2012 LOAD_CONST 72 (" I do have an ")
+2014 LOAD_DEREF 28 (response)
+2016 FORMAT_SIMPLE
+2018 LOAD_CONST 73 ("!")
+2020 BUILD_STRING 6
+2022 CALL 1
+2024 POP_TOP
+2026 JUMP_FORWARD 28 (to 2054)
+
+2028 LOAD_GLOBAL 19 (NULL + print)
+2030 LOAD_GLOBAL 36 (MAG)
+2032 FORMAT_SIMPLE
+2034 LOAD_CONST 71 ("ArtSym:")
+2036 LOAD_GLOBAL 22 (RESET)
+2038 FORMAT_SIMPLE
+2040 LOAD_CONST 74 (" I do have a ")
+2042 LOAD_DEREF 28 (response)
+2044 FORMAT_SIMPLE
+2046 LOAD_CONST 73 ("!")
+2048 BUILD_STRING 6
+2050 CALL 1
+2052 POP_TOP
+
+2054 LOAD_GLOBAL 73 (NULL + remove_trick)
+2056 LOAD_DEREF 28 (response)
+2058 LOAD_FAST 19 (player_hand)
+2060 LOAD_FAST 20 (NPC_hand)
+2062 CALL 3
+2064 POP_TOP
+
+2066 LOAD_GLOBAL 19 (NULL + print)
+2068 LOAD_GLOBAL 20 (CYAN)
+2070 FORMAT_SIMPLE
+2072 LOAD_CONST 75 ("Trick!")
+2074 LOAD_GLOBAL 22 (RESET)
+2076 FORMAT_SIMPLE
+2078 BUILD_STRING 3
+2080 CALL 1
+2082 POP_TOP
+
+2084 LOAD_FAST 21 (player_tricks)
+2086 LOAD_CONST 10 (1)
+2088 BINARY_OP 13 (+=)
+2090 STORE_FAST 21 (player_tricks)
+2092 JUMP_FORWARD 56 (to 2128)
+
+2094 LOAD_GLOBAL 19 (NULL + print)
+2096 LOAD_GLOBAL 36 (MAG)
+2098 FORMAT_SIMPLE
+2100 LOAD_CONST 71 ("ArtSym:")
+2102 LOAD_GLOBAL 22 (RESET)
+2104 FORMAT_SIMPLE
+2106 LOAD_CONST 76 (" Nope, Go Fish!")
+2108 BUILD_STRING 4
+2110 CALL 1
+2112 POP_TOP
+
+2114 LOAD_FAST 19 (player_hand)
+2116 LOAD_ATTR 27 (NULL|self + add)
+2118 LOAD_FAST 18 (deck)
+2120 LOAD_ATTR 29 (NULL|self + draw)
+2122 CALL 0
+2124 CALL 1
+2126 POP_TOP
+
+2128 LOAD_GLOBAL 33 (NULL + len)
+2130 LOAD_FAST 19 (player_hand)
+2132 CALL 1
+2134 LOAD_CONST 2 (0)
+2136 COMPARE_OP 148 (>)
+2138 POP_JUMP_IF_FALSE 15 (to 2152)
+2140 LOAD_GLOBAL 33 (NULL + len)
+2142 LOAD_FAST 20 (NPC_hand)
+2144 CALL 1
+2146 LOAD_CONST 2 (0)
+2148 COMPARE_OP 148 (>)
+2150 POP_JUMP_IF_TRUE 2 (to 2152)
+
+2152 JUMP_FORWARD 1793 (to 3726)
+
+2154 LOAD_GLOBAL 19 (NULL + print)
+2156 LOAD_GLOBAL 20 (CYAN)
+2158 FORMAT_SIMPLE
+2160 CALL 1
+2162 POP_TOP
+
+2164 LOAD_GLOBAL 19 (NULL + print)
+2166 LOAD_CONST 15 ("================================================================")
+2168 CALL 1
+2170 POP_TOP
+
+2172 LOAD_GLOBAL 19 (NULL + print)
+2174 LOAD_GLOBAL 22 (RESET)
+2176 FORMAT_SIMPLE
+2178 CALL 1
+2180 POP_TOP
+
+2182 LOAD_GLOBAL 19 (NULL + print)
+2184 LOAD_CONST 18 ("Checking for ")
+2186 LOAD_GLOBAL 30 (YELL)
+2188 FORMAT_SIMPLE
+2190 LOAD_CONST 19 ("Your")
+2192 LOAD_GLOBAL 22 (RESET)
+2194 FORMAT_SIMPLE
+2196 LOAD_CONST 20 (" ")
+2198 LOAD_GLOBAL 20 (CYAN)
+2200 FORMAT_SIMPLE
+2202 LOAD_CONST 21 ("Tricks")
+2204 LOAD_GLOBAL 22 (RESET)
+2206 FORMAT_SIMPLE
+2208 LOAD_CONST 22 ("...")
+2210 BUILD_STRING 9
+2212 CALL 1
+2214 POP_TOP
+
+2216 LOAD_FAST 21 (player_tricks)
+2218 LOAD_GLOBAL 35 (NULL + tricks)
+2220 LOAD_FAST 19 (player_hand)
+2222 CALL 1
+2224 BINARY_OP 13 (+=)
+2226 STORE_FAST 21 (player_tricks)
+
+2228 LOAD_GLOBAL 19 (NULL + print)
+2230 LOAD_CONST 23 ("\nChecking for ")
+2232 LOAD_GLOBAL 36 (MAG)
+2234 FORMAT_SIMPLE
+2236 LOAD_CONST 24 ("Opponent")
+2238 LOAD_GLOBAL 22 (RESET)
+2240 FORMAT_SIMPLE
+2242 LOAD_CONST 20 (" ")
+2244 LOAD_GLOBAL 20 (CYAN)
+2246 FORMAT_SIMPLE
+2248 LOAD_CONST 21 ("Tricks")
+2250 LOAD_GLOBAL 22 (RESET)
+2252 FORMAT_SIMPLE
+2254 LOAD_CONST 22 ("...")
+2256 BUILD_STRING 9
+2258 CALL 1
+2260 POP_TOP
+
+2262 LOAD_FAST 22 (NPC_tricks)
+2264 LOAD_GLOBAL 35 (NULL + tricks)
+2266 LOAD_FAST 20 (NPC_hand)
+2268 CALL 1
+2270 BINARY_OP 13 (+=)
+2272 STORE_FAST 22 (NPC_tricks)
+
+2274 LOAD_GLOBAL 33 (NULL + len)
+2276 LOAD_FAST 19 (player_hand)
+2278 CALL 1
+2280 LOAD_CONST 2 (0)
+2282 COMPARE_OP 148 (>)
+2284 POP_JUMP_IF_FALSE 15 (to 2298)
+2286 LOAD_GLOBAL 33 (NULL + len)
+2288 LOAD_FAST 20 (NPC_hand)
+2290 CALL 1
+2292 LOAD_CONST 2 (0)
+2294 COMPARE_OP 148 (>)
+2296 POP_JUMP_IF_TRUE 2 (to 2298)
+
+2298 JUMP_FORWARD 1610 (to 3726)
+
+2300 LOAD_FAST 21 (player_tricks)
+2302 LOAD_CONST 4 (7)
+2304 COMPARE_OP 88 (==)
+2306 POP_JUMP_IF_FALSE 56 (to 2356)
+
+2308 LOAD_GLOBAL 19 (NULL + print)
+2310 LOAD_CONST 11 ("\n")
+2312 LOAD_GLOBAL 38 (RED)
+2314 FORMAT_SIMPLE
+2316 LOAD_CONST 25 ("Player")
+2318 LOAD_GLOBAL 22 (RESET)
+2320 FORMAT_SIMPLE
+2322 LOAD_CONST 20 (" ")
+2324 LOAD_GLOBAL 30 (YELL)
+2326 FORMAT_SIMPLE
+2328 LOAD_CONST 26 ("Score:")
+2330 LOAD_GLOBAL 22 (RESET)
+2332 FORMAT_SIMPLE
+2334 LOAD_CONST 20 (" ")
+2336 LOAD_GLOBAL 38 (RED)
+2338 FORMAT_SIMPLE
+2340 LOAD_FAST 21 (player_tricks)
+2342 FORMAT_SIMPLE
+2344 LOAD_GLOBAL 22 (RESET)
+2346 FORMAT_SIMPLE
+2348 LOAD_CONST 11 ("\n")
+2350 BUILD_STRING 13
+2352 CALL 1
+2354 POP_TOP
+2356 JUMP_FORWARD 215 (to 2560)
+
+2358 LOAD_FAST 21 (player_tricks)
+2360 LOAD_CONST 27 (13)
+2362 COMPARE_OP 88 (==)
+2364 POP_JUMP_IF_FALSE 56 (to 2414)
+
+2366 LOAD_GLOBAL 19 (NULL + print)
+2368 LOAD_CONST 11 ("\n")
+2370 LOAD_GLOBAL 40 (BLUE)
+2372 FORMAT_SIMPLE
+2374 LOAD_CONST 25 ("Player")
+2376 LOAD_GLOBAL 22 (RESET)
+2378 FORMAT_SIMPLE
+2380 LOAD_CONST 20 (" ")
+2382 LOAD_GLOBAL 30 (YELL)
+2384 FORMAT_SIMPLE
+2386 LOAD_CONST 26 ("Score:")
+2388 LOAD_GLOBAL 22 (RESET)
+2390 FORMAT_SIMPLE
+2392 LOAD_CONST 20 (" ")
+2394 LOAD_GLOBAL 40 (BLUE)
+2396 FORMAT_SIMPLE
+2398 LOAD_FAST 21 (player_tricks)
+2400 FORMAT_SIMPLE
+2402 LOAD_GLOBAL 22 (RESET)
+2404 FORMAT_SIMPLE
+2406 LOAD_CONST 11 ("\n")
+2408 BUILD_STRING 13
+2410 CALL 1
+2412 POP_TOP
+2414 JUMP_FORWARD 153 (to 2560)
+
+2416 LOAD_FAST 21 (player_tricks)
+2418 LOAD_CONST 28 (20)
+2420 COMPARE_OP 88 (==)
+2422 POP_JUMP_IF_FALSE 56 (to 2472)
+
+2424 LOAD_GLOBAL 19 (NULL + print)
+2426 LOAD_CONST 11 ("\n")
+2428 LOAD_GLOBAL 42 (GREEN)
+2430 FORMAT_SIMPLE
+2432 LOAD_CONST 25 ("Player")
+2434 LOAD_GLOBAL 22 (RESET)
+2436 FORMAT_SIMPLE
+2438 LOAD_CONST 20 (" ")
+2440 LOAD_GLOBAL 30 (YELL)
+2442 FORMAT_SIMPLE
+2444 LOAD_CONST 26 ("Score:")
+2446 LOAD_GLOBAL 22 (RESET)
+2448 FORMAT_SIMPLE
+2450 LOAD_CONST 20 (" ")
+2452 LOAD_GLOBAL 42 (GREEN)
+2454 FORMAT_SIMPLE
+2456 LOAD_FAST 21 (player_tricks)
+2458 FORMAT_SIMPLE
+2460 LOAD_GLOBAL 22 (RESET)
+2462 FORMAT_SIMPLE
+2464 LOAD_CONST 11 ("\n")
+2466 BUILD_STRING 13
+2468 CALL 1
+2470 POP_TOP
+2472 JUMP_FORWARD 91 (to 2560)
+
+2474 LOAD_FAST 21 (player_tricks)
+2476 LOAD_CONST 29 (26)
+2478 COMPARE_OP 88 (==)
+2480 POP_JUMP_IF_FALSE 56 (to 2530)
+
+2482 LOAD_GLOBAL 19 (NULL + print)
+2484 LOAD_CONST 11 ("\n")
+2486 LOAD_GLOBAL 44 (BW)
+2488 FORMAT_SIMPLE
+2490 LOAD_CONST 25 ("Player")
+2492 LOAD_GLOBAL 22 (RESET)
+2494 FORMAT_SIMPLE
+2496 LOAD_CONST 20 (" ")
+2498 LOAD_GLOBAL 30 (YELL)
+2500 FORMAT_SIMPLE
+2502 LOAD_CONST 26 ("Score:")
+2504 LOAD_GLOBAL 22 (RESET)
+2506 FORMAT_SIMPLE
+2508 LOAD_CONST 20 (" ")
+2510 LOAD_GLOBAL 44 (BW)
+2512 FORMAT_SIMPLE
+2514 LOAD_FAST 21 (player_tricks)
+2516 FORMAT_SIMPLE
+2518 LOAD_GLOBAL 22 (RESET)
+2520 FORMAT_SIMPLE
+2522 LOAD_CONST 11 ("\n")
+2524 BUILD_STRING 13
+2526 CALL 1
+2528 POP_TOP
+2530 JUMP_FORWARD 29 (to 2560)
+
+2532 LOAD_GLOBAL 19 (NULL + print)
+2534 LOAD_CONST 11 ("\n")
+2536 LOAD_GLOBAL 30 (YELL)
+2538 FORMAT_SIMPLE
+2540 LOAD_CONST 30 ("Player Score:")
+2542 LOAD_GLOBAL 22 (RESET)
+2544 FORMAT_SIMPLE
+2546 LOAD_CONST 20 (" ")
+2548 LOAD_FAST 21 (player_tricks)
+2550 FORMAT_SIMPLE
+2552 LOAD_CONST 11 ("\n")
+2554 BUILD_STRING 7
+2556 CALL 1
+2558 POP_TOP
+
+2560 LOAD_FAST 22 (NPC_tricks)
+2562 LOAD_CONST 4 (7)
+2564 COMPARE_OP 88 (==)
+2566 POP_JUMP_IF_FALSE 55 (to 2614)
+
+2568 LOAD_GLOBAL 19 (NULL + print)
+2570 LOAD_GLOBAL 38 (RED)
+2572 FORMAT_SIMPLE
+2574 LOAD_CONST 31 ("ArtSym")
+2576 LOAD_GLOBAL 22 (RESET)
+2578 FORMAT_SIMPLE
+2580 LOAD_CONST 20 (" ")
+2582 LOAD_GLOBAL 36 (MAG)
+2584 FORMAT_SIMPLE
+2586 LOAD_CONST 26 ("Score:")
+2588 LOAD_GLOBAL 22 (RESET)
+2590 FORMAT_SIMPLE
+2592 LOAD_CONST 20 (" ")
+2594 LOAD_GLOBAL 38 (RED)
+2596 FORMAT_SIMPLE
+2598 LOAD_FAST 22 (NPC_tricks)
+2600 FORMAT_SIMPLE
+2602 LOAD_GLOBAL 22 (RESET)
+2604 FORMAT_SIMPLE
+2606 LOAD_CONST 11 ("\n")
+2608 BUILD_STRING 12
+2610 CALL 1
+2612 POP_TOP
+2614 JUMP_FORWARD 211 (to 2810)
+
+2616 LOAD_FAST 22 (NPC_tricks)
+2618 LOAD_CONST 27 (13)
+2620 COMPARE_OP 88 (==)
+2622 POP_JUMP_IF_FALSE 55 (to 2670)
+
+2624 LOAD_GLOBAL 19 (NULL + print)
+2626 LOAD_GLOBAL 40 (BLUE)
+2628 FORMAT_SIMPLE
+2630 LOAD_CONST 31 ("ArtSym")
+2632 LOAD_GLOBAL 22 (RESET)
+2634 FORMAT_SIMPLE
+2636 LOAD_CONST 20 (" ")
+2638 LOAD_GLOBAL 36 (MAG)
+2640 FORMAT_SIMPLE
+2642 LOAD_CONST 26 ("Score:")
+2644 LOAD_GLOBAL 22 (RESET)
+2646 FORMAT_SIMPLE
+2648 LOAD_CONST 20 (" ")
+2650 LOAD_GLOBAL 40 (BLUE)
+2652 FORMAT_SIMPLE
+2654 LOAD_FAST 22 (NPC_tricks)
+2656 FORMAT_SIMPLE
+2658 LOAD_GLOBAL 22 (RESET)
+2660 FORMAT_SIMPLE
+2662 LOAD_CONST 11 ("\n")
+2664 BUILD_STRING 12
+2666 CALL 1
+2668 POP_TOP
+2670 JUMP_FORWARD 150 (to 2810)
+
+2672 LOAD_FAST 22 (NPC_tricks)
+2674 LOAD_CONST 28 (20)
+2676 COMPARE_OP 88 (==)
+2678 POP_JUMP_IF_FALSE 55 (to 2726)
+
+2680 LOAD_GLOBAL 19 (NULL + print)
+2682 LOAD_GLOBAL 42 (GREEN)
+2684 FORMAT_SIMPLE
+2686 LOAD_CONST 31 ("ArtSym")
+2688 LOAD_GLOBAL 22 (RESET)
+2690 FORMAT_SIMPLE
+2692 LOAD_CONST 20 (" ")
+2694 LOAD_GLOBAL 36 (MAG)
+2696 FORMAT_SIMPLE
+2698 LOAD_CONST 26 ("Score:")
+2700 LOAD_GLOBAL 22 (RESET)
+2702 FORMAT_SIMPLE
+2704 LOAD_CONST 20 (" ")
+2706 LOAD_GLOBAL 42 (GREEN)
+2708 FORMAT_SIMPLE
+2710 LOAD_FAST 22 (NPC_tricks)
+2712 FORMAT_SIMPLE
+2714 LOAD_GLOBAL 22 (RESET)
+2716 FORMAT_SIMPLE
+2718 LOAD_CONST 11 ("\n")
+2720 BUILD_STRING 12
+2722 CALL 1
+2724 POP_TOP
+2726 JUMP_FORWARD 89 (to 2810)
+
+2728 LOAD_FAST 22 (NPC_tricks)
+2730 LOAD_CONST 29 (26)
+2732 COMPARE_OP 88 (==)
+2734 POP_JUMP_IF_FALSE 55 (to 2782)
+
+2736 LOAD_GLOBAL 19 (NULL + print)
+2738 LOAD_GLOBAL 44 (BW)
+2740 FORMAT_SIMPLE
+2742 LOAD_CONST 31 ("ArtSym")
+2744 LOAD_GLOBAL 22 (RESET)
+2746 FORMAT_SIMPLE
+2748 LOAD_CONST 20 (" ")
+2750 LOAD_GLOBAL 36 (MAG)
+2752 FORMAT_SIMPLE
+2754 LOAD_CONST 26 ("Score:")
+2756 LOAD_GLOBAL 22 (RESET)
+2758 FORMAT_SIMPLE
+2760 LOAD_CONST 20 (" ")
+2762 LOAD_GLOBAL 44 (BW)
+2764 FORMAT_SIMPLE
+2766 LOAD_FAST 22 (NPC_tricks)
+2768 FORMAT_SIMPLE
+2770 LOAD_GLOBAL 22 (RESET)
+2772 FORMAT_SIMPLE
+2774 LOAD_CONST 11 ("\n")
+2776 BUILD_STRING 12
+2778 CALL 1
+2780 POP_TOP
+2782 JUMP_FORWARD 28 (to 2810)
+
+2784 LOAD_GLOBAL 19 (NULL + print)
+2786 LOAD_GLOBAL 36 (MAG)
+2788 FORMAT_SIMPLE
+2790 LOAD_CONST 32 ("ArtSym Score:")
+2792 LOAD_GLOBAL 22 (RESET)
+2794 FORMAT_SIMPLE
+2796 LOAD_CONST 20 (" ")
+2798 LOAD_FAST 22 (NPC_tricks)
+2800 FORMAT_SIMPLE
+2802 LOAD_CONST 11 ("\n")
+2804 BUILD_STRING 6
+2806 CALL 1
+2808 POP_TOP
+
+2810 LOAD_FAST 3 (game_count)
+2812 LOAD_CONST 4 (7)
+2814 COMPARE_OP 188 (>=)
+2816 POP_JUMP_IF_FALSE 89 (to 2892)
+2818 LOAD_FAST 5 (game_7)
+2820 TO_BOOL
+2822 POP_JUMP_IF_FALSE 82 (to 2892)
+
+2824 LOAD_GLOBAL 19 (NULL + print)
+2826 LOAD_GLOBAL 30 (YELL)
+2828 FORMAT_SIMPLE
+2830 LOAD_CONST 33 ("Your(")
+2832 LOAD_GLOBAL 22 (RESET)
+2834 FORMAT_SIMPLE
+2836 LOAD_GLOBAL 38 (RED)
+2838 FORMAT_SIMPLE
+2840 LOAD_CONST 34 ("?")
+2842 LOAD_GLOBAL 22 (RESET)
+2844 FORMAT_SIMPLE
+2846 LOAD_GLOBAL 30 (YELL)
+2848 FORMAT_SIMPLE
+2850 LOAD_CONST 35 (")")
+2852 LOAD_GLOBAL 22 (RESET)
+2854 FORMAT_SIMPLE
+2856 LOAD_CONST 20 (" ")
+2858 LOAD_GLOBAL 38 (RED)
+2860 FORMAT_SIMPLE
+2862 LOAD_CONST 36 ("HAND")
+2864 LOAD_GLOBAL 22 (RESET)
+2866 FORMAT_SIMPLE
+2868 LOAD_GLOBAL 30 (YELL)
+2870 FORMAT_SIMPLE
+2872 LOAD_CONST 37 (":")
+2874 LOAD_GLOBAL 22 (RESET)
+2876 FORMAT_SIMPLE
+2878 LOAD_CONST 11 ("\n")
+2880 LOAD_FAST 19 (player_hand)
+2882 LOAD_CONST 17 ("long")
+2884 FORMAT_WITH_SPEC
+2886 BUILD_STRING 18
+2888 CALL 1
+2890 POP_TOP
+2892 JUMP_FORWARD 28 (to 2920)
+
+2894 LOAD_GLOBAL 19 (NULL + print)
+2896 LOAD_GLOBAL 30 (YELL)
+2898 FORMAT_SIMPLE
+2900 LOAD_CONST 38 ("Your Hand:")
+2902 LOAD_GLOBAL 22 (RESET)
+2904 FORMAT_SIMPLE
+2906 LOAD_CONST 11 ("\n")
+2908 LOAD_FAST 19 (player_hand)
+2910 LOAD_CONST 17 ("long")
+2912 FORMAT_WITH_SPEC
+2914 BUILD_STRING 5
+2916 CALL 1
+2918 POP_TOP
+
+2920 LOAD_GLOBAL 74 (random)
+2922 LOAD_ATTR 76 (randint)
+2924 PUSH_NULL
+2926 LOAD_CONST 2 (0)
+2928 LOAD_GLOBAL 33 (NULL + len)
+2930 LOAD_FAST 20 (NPC_hand)
+2932 CALL 1
+2934 LOAD_CONST 10 (1)
+2936 BINARY_OP 10 (-)
+2938 CALL 2
+2940 STORE_FAST 24 (guess_index)
+
+2942 LOAD_FAST 20 (NPC_hand)
+2944 LOAD_FAST 24 (guess_index)
+2946 BINARY_SUBSCR
+2948 STORE_FAST 25 (guess_card)
+
+2950 LOAD_FAST 25 (guess_card)
+2952 LOAD_ATTR 78 (rank)
+2954 STORE_DEREF 28 (response)
+
+2956 LOAD_GLOBAL 19 (NULL + print)
+2958 LOAD_CONST 11 ("\n")
+2960 LOAD_GLOBAL 36 (MAG)
+2962 FORMAT_SIMPLE
+2964 LOAD_CONST 71 ("ArtSym:")
+2966 LOAD_GLOBAL 22 (RESET)
+2968 FORMAT_SIMPLE
+2970 LOAD_CONST 66 (" Do you have any ")
+2972 LOAD_FAST 25 (guess_card)
+2974 LOAD_ATTR 78 (rank)
+2976 FORMAT_SIMPLE
+2978 LOAD_CONST 67 ("s?\n")
+2980 BUILD_STRING 7
+2982 CALL 1
+2984 POP_TOP
+
+2986 LOAD_FAST 3 (game_count)
+2988 LOAD_CONST 27 (13)
+2990 COMPARE_OP 188 (>=)
+2992 POP_JUMP_IF_FALSE 24 (to 3010)
+
+2994 LOAD_GLOBAL 19 (NULL + print)
+2996 LOAD_GLOBAL 62 (BLACK)
+2998 FORMAT_SIMPLE
+3000 LOAD_CONST 77 ("TOP PRIORITY: FIND L.S. - B.")
+3002 LOAD_GLOBAL 22 (RESET)
+3004 FORMAT_SIMPLE
+3006 BUILD_STRING 3
+3008 CALL 1
+3010 POP_TOP
+
+3012 LOAD_GLOBAL 71 (NULL + any)
+3014 LOAD_FAST 28 (response)
+3016 BUILD_TUPLE 1
+3018 LOAD_CONST 78 (code object <genexpr>)
+3020 MAKE_FUNCTION
+3022 SET_FUNCTION_ATTRIBUTE 8
+3024 LOAD_FAST 19 (player_hand)
+3026 GET_ITER
+3028 CALL 0
+3030 CALL 1
+3032 TO_BOOL
+3034 POP_JUMP_IF_FALSE 88 (to 3126)
+
+3036 LOAD_DEREF 28 (response)
+3038 LOAD_CONST 69 ("8")
+3040 COMPARE_OP 88 (==)
+3042 POP_JUMP_IF_TRUE 6 (to 3052)
+3044 LOAD_DEREF 28 (response)
+3046 LOAD_CONST 70 ("Ace")
+3048 COMPARE_OP 88 (==)
+3050 POP_JUMP_IF_FALSE 29 (to 3078)
+
+3052 LOAD_GLOBAL 19 (NULL + print)
+3054 LOAD_GLOBAL 30 (YELL)
+3056 FORMAT_SIMPLE
+3058 LOAD_CONST 65 ("User:")
+3060 LOAD_GLOBAL 22 (RESET)
+3062 FORMAT_SIMPLE
+3064 LOAD_CONST 72 (" I do have an ")
+3066 LOAD_DEREF 28 (response)
+3068 FORMAT_SIMPLE
+3070 LOAD_CONST 73 ("!")
+3072 BUILD_STRING 6
+3074 CALL 1
+3076 POP_TOP
+3078 JUMP_FORWARD 28 (to 3106)
+
+3080 LOAD_GLOBAL 19 (NULL + print)
+3082 LOAD_GLOBAL 30 (YELL)
+3084 FORMAT_SIMPLE
+3086 LOAD_CONST 65 ("User:")
+3088 LOAD_GLOBAL 22 (RESET)
+3090 FORMAT_SIMPLE
+3092 LOAD_CONST 74 (" I do have a ")
+3094 LOAD_DEREF 28 (response)
+3096 FORMAT_SIMPLE
+3098 LOAD_CONST 73 ("!")
+3100 BUILD_STRING 6
+3102 CALL 1
+3104 POP_TOP
+
+3106 LOAD_GLOBAL 73 (NULL + remove_trick)
+3108 LOAD_DEREF 28 (response)
+3110 LOAD_FAST 19 (player_hand)
+3112 LOAD_FAST 20 (NPC_hand)
+3114 CALL 3
+3116 POP_TOP
+
+3118 LOAD_FAST 22 (NPC_tricks)
+3120 LOAD_CONST 10 (1)
+3122 BINARY_OP 13 (+=)
+3124 STORE_FAST 22 (NPC_tricks)
+3126 JUMP_FORWARD 56 (to 3162)
+
+3128 LOAD_GLOBAL 19 (NULL + print)
+3130 LOAD_GLOBAL 30 (YELL)
+3132 FORMAT_SIMPLE
+3134 LOAD_CONST 65 ("User:")
+3136 LOAD_GLOBAL 22 (RESET)
+3138 FORMAT_SIMPLE
+3140 LOAD_CONST 76 (" Nope, Go Fish!")
+3142 BUILD_STRING 4
+3144 CALL 1
+3146 POP_TOP
+
+3148 LOAD_FAST 20 (NPC_hand)
+3150 LOAD_ATTR 27 (NULL|self + add)
+3152 LOAD_FAST 18 (deck)
+3154 LOAD_ATTR 29 (NULL|self + draw)
+3156 CALL 0
+3158 CALL 1
+3160 POP_TOP
+
+3162 LOAD_GLOBAL 33 (NULL + len)
+3164 LOAD_FAST 19 (player_hand)
+3166 CALL 1
+3168 LOAD_CONST 2 (0)
+3170 COMPARE_OP 148 (>)
+3172 POP_JUMP_IF_FALSE 15 (to 3186)
+3174 LOAD_GLOBAL 33 (NULL + len)
+3176 LOAD_FAST 20 (NPC_hand)
+3178 CALL 1
+3180 LOAD_CONST 2 (0)
+3182 COMPARE_OP 148 (>)
+3184 POP_JUMP_IF_TRUE 2 (to 3186)
+
+3186 JUMP_FORWARD 615 (to 3726)
+
+3188 LOAD_GLOBAL 47 (NULL + input)
+3190 LOAD_CONST 79 ("\nPress enter to continue...")
+3192 CALL 1
+3194 LOAD_ATTR 49 (NULL|self + capitalize)
+3196 CALL 0
+3198 STORE_FAST 26 (magic)
+
+3200 LOAD_FAST 26 (magic)
+3202 LOAD_CONST 80 ("7")
+3204 COMPARE_OP 88 (==)
+3206 POP_JUMP_IF_FALSE 35 (to 3236)
+3208 LOAD_FAST 13 (input_7)
+3210 TO_BOOL
+3212 POP_JUMP_IF_FALSE 28 (to 3236)
+
+3214 LOAD_GLOBAL 19 (NULL + print)
+3216 LOAD_GLOBAL 38 (RED)
+3218 FORMAT_SIMPLE
+3220 LOAD_CONST 81 ("The Path...")
+3222 LOAD_GLOBAL 22 (RESET)
+3224 FORMAT_SIMPLE
+3226 BUILD_STRING 3
+3228 CALL 1
+3230 POP_TOP
+
+3232 LOAD_CONST 43 (False)
+3234 STORE_FAST 13 (input_7)
+3236 JUMP_FORWARD 473 (to 3672)
+
+3238 LOAD_FAST 26 (magic)
+3240 LOAD_CONST 82 ("13")
+3242 COMPARE_OP 88 (==)
+3244 POP_JUMP_IF_FALSE 35 (to 3274)
+3246 LOAD_FAST 14 (input_13)
+3248 TO_BOOL
+3250 POP_JUMP_IF_FALSE 28 (to 3274)
+
+3252 LOAD_GLOBAL 19 (NULL + print)
+3254 LOAD_GLOBAL 40 (BLUE)
+3256 FORMAT_SIMPLE
+3258 LOAD_CONST 81 ("The Path...")
+3260 LOAD_GLOBAL 22 (RESET)
+3262 FORMAT_SIMPLE
+3264 BUILD_STRING 3
+3266 CALL 1
+3268 POP_TOP
+
+3270 LOAD_CONST 43 (False)
+3272 STORE_FAST 14 (input_13)
+3274 JUMP_FORWARD 432 (to 3672)
+
+3276 LOAD_FAST 26 (magic)
+3278 LOAD_CONST 83 ("20")
+3280 COMPARE_OP 88 (==)
+3282 POP_JUMP_IF_FALSE 35 (to 3312)
+3284 LOAD_FAST 15 (input_20)
+3286 TO_BOOL
+3288 POP_JUMP_IF_FALSE 28 (to 3312)
+
+3290 LOAD_GLOBAL 19 (NULL + print)
+3292 LOAD_GLOBAL 42 (GREEN)
+3294 FORMAT_SIMPLE
+3296 LOAD_CONST 81 ("The Path...")
+3298 LOAD_GLOBAL 22 (RESET)
+3300 FORMAT_SIMPLE
+3302 BUILD_STRING 3
+3304 CALL 1
+3306 POP_TOP
+
+3308 LOAD_CONST 43 (False)
+3310 STORE_FAST 15 (input_20)
+3312 JUMP_FORWARD 391 (to 3672)
+
+3314 LOAD_FAST 26 (magic)
+3316 LOAD_CONST 84 ("88")
+3318 COMPARE_OP 88 (==)
+3320 POP_JUMP_IF_FALSE 26 (to 3340)
+
+3322 LOAD_GLOBAL 19 (NULL + print)
+3324 LOAD_GLOBAL 20 (CYAN)
+3326 FORMAT_SIMPLE
+3328 LOAD_CONST 85 ("CHIZZA SAYS THE 14 WORDS!\nIt wasn't very effective...")
+3330 LOAD_GLOBAL 22 (RESET)
+3332 FORMAT_SIMPLE
+3334 BUILD_STRING 3
+3336 CALL 1
+3338 POP_TOP
+3340 JUMP_FORWARD 359 (to 3672)
+
+3342 LOAD_FAST 26 (magic)
+3344 LOAD_CONST 86 ("Caw")
+3346 COMPARE_OP 88 (==)
+3348 POP_JUMP_IF_FALSE 26 (to 3368)
+
+3350 LOAD_GLOBAL 19 (NULL + print)
+3352 LOAD_GLOBAL 20 (CYAN)
+3354 FORMAT_SIMPLE
+3356 LOAD_CONST 87 ("Feel That? That's Caw...")
+3358 LOAD_GLOBAL 22 (RESET)
+3360 FORMAT_SIMPLE
+3362 BUILD_STRING 3
+3364 CALL 1
+3366 POP_TOP
+3368 JUMP_FORWARD 327 (to 3672)
+
+3370 LOAD_FAST 26 (magic)
+3372 LOAD_CONST 88 ("Penis")
+3374 COMPARE_OP 88 (==)
+3376 POP_JUMP_IF_FALSE 27 (to 3398)
+
+3378 LOAD_GLOBAL 19 (NULL + print)
+3380 LOAD_GLOBAL 20 (CYAN)
+3382 FORMAT_SIMPLE
+3384 LOAD_FAST 26 (magic)
+3386 FORMAT_SIMPLE
+3388 LOAD_GLOBAL 22 (RESET)
+3390 FORMAT_SIMPLE
+3392 BUILD_STRING 3
+3394 CALL 1
+3396 POP_TOP
+3398 JUMP_FORWARD 294 (to 3672)
+
+3400 LOAD_FAST 26 (magic)
+3402 LOAD_CONST 89 ("Chizza")
+3404 COMPARE_OP 88 (==)
+3406 POP_JUMP_IF_FALSE 29 (to 3432)
+
+3408 LOAD_GLOBAL 19 (NULL + print)
+3410 LOAD_GLOBAL 20 (CYAN)
+3412 FORMAT_SIMPLE
+3414 LOAD_CONST 90 ("Obunga ")
+3416 LOAD_FAST 26 (magic)
+3418 FORMAT_SIMPLE
+3420 LOAD_CONST 91 (" Scopa")
+3422 LOAD_GLOBAL 22 (RESET)
+3424 FORMAT_SIMPLE
+3426 BUILD_STRING 5
+3428 CALL 1
+3430 POP_TOP
+3432 JUMP_FORWARD 259 (to 3672)
+
+3434 LOAD_FAST 26 (magic)
+3436 LOAD_CONST 92 ("14")
+3438 COMPARE_OP 88 (==)
+3440 POP_JUMP_IF_FALSE 25 (to 3460)
+
+3442 LOAD_GLOBAL 19 (NULL + print)
+3444 LOAD_GLOBAL 20 (CYAN)
+3446 FORMAT_SIMPLE
+3448 LOAD_CONST 93 ("CHIZZA DOES A NAZI SALUTE!\nIt wasn't very effective...")
+3450 LOAD_GLOBAL 22 (RESET)
+3452 FORMAT_SIMPLE
+3454 BUILD_STRING 3
+3456 CALL 1
+3458 POP_TOP
+3460 JUMP_FORWARD 228 (to 3672)
+
+3462 LOAD_FAST 26 (magic)
+3464 LOAD_CONST 94 ("Karsus")
+3466 COMPARE_OP 88 (==)
+3468 POP_JUMP_IF_FALSE 25 (to 3488)
+
+3470 LOAD_GLOBAL 19 (NULL + print)
+3472 LOAD_GLOBAL 20 (CYAN)
+3474 FORMAT_SIMPLE
+3476 LOAD_CONST 95 ("Who?")
+3478 LOAD_GLOBAL 22 (RESET)
+3480 FORMAT_SIMPLE
+3482 BUILD_STRING 3
+3484 CALL 1
+3486 POP_TOP
+3488 JUMP_FORWARD 197 (to 3672)
+
+3490 LOAD_FAST 26 (magic)
+3492 LOAD_CONST 96 ("Lord Soth")
+3494 COMPARE_OP 88 (==)
+3496 POP_JUMP_IF_FALSE 25 (to 3516)
+
+3498 LOAD_GLOBAL 19 (NULL + print)
+3500 LOAD_GLOBAL 62 (BLACK)
+3502 FORMAT_SIMPLE
+3504 LOAD_CONST 95 ("Who?")
+3506 LOAD_GLOBAL 22 (RESET)
+3508 FORMAT_SIMPLE
+3510 BUILD_STRING 3
+3512 CALL 1
+3514 POP_TOP
+3516 JUMP_FORWARD 166 (to 3672)
+
+3518 LOAD_FAST 26 (magic)
+3520 LOAD_CONST 97 ("Mystryl")
+3522 COMPARE_OP 88 (==)
+3524 POP_JUMP_IF_FALSE 25 (to 3544)
+
+3526 LOAD_GLOBAL 19 (NULL + print)
+3528 LOAD_GLOBAL 36 (MAG)
+3530 FORMAT_SIMPLE
+3532 LOAD_CONST 95 ("Who?")
+3534 LOAD_GLOBAL 22 (RESET)
+3536 FORMAT_SIMPLE
+3538 BUILD_STRING 3
+3540 CALL 1
+3542 POP_TOP
+3544 JUMP_FORWARD 135 (to 3672)
+
+3546 LOAD_FAST 26 (magic)
+3548 LOAD_CONST 98 ("Myrkul")
+3550 COMPARE_OP 88 (==)
+3552 POP_JUMP_IF_FALSE 25 (to 3572)
+
+3554 LOAD_GLOBAL 19 (NULL + print)
+3556 LOAD_GLOBAL 38 (RED)
+3558 FORMAT_SIMPLE
+3560 LOAD_CONST 95 ("Who?")
+3562 LOAD_GLOBAL 22 (RESET)
+3564 FORMAT_SIMPLE
+3566 BUILD_STRING 3
+3568 CALL 1
+3570 POP_TOP
+3572 JUMP_FORWARD 104 (to 3672)
+
+3574 LOAD_FAST 26 (magic)
+3576 LOAD_CONST 99 ("LS")
+3578 COMPARE_OP 88 (==)
+3580 POP_JUMP_IF_TRUE 12 (to 3598)
+3582 LOAD_FAST 26 (magic)
+3584 LOAD_CONST 100 ("L.S")
+3586 COMPARE_OP 88 (==)
+3588 POP_JUMP_IF_TRUE 6 (to 3598)
+3590 LOAD_FAST 26 (magic)
+3592 LOAD_CONST 101 ("Ls")
+3594 COMPARE_OP 88 (==)
+3596 POP_JUMP_IF_FALSE 25 (to 3616)
+
+3598 LOAD_GLOBAL 19 (NULL + print)
+3600 LOAD_GLOBAL 40 (BLUE)
+3602 FORMAT_SIMPLE
+3604 LOAD_CONST 95 ("Who?")
+3606 LOAD_GLOBAL 22 (RESET)
+3608 FORMAT_SIMPLE
+3610 BUILD_STRING 3
+3612 CALL 1
+3614 POP_TOP
+3616 JUMP_FORWARD 61 (to 3672)
+
+3618 LOAD_FAST 26 (magic)
+3620 LOAD_CONST 102 ("Blackith")
+3622 COMPARE_OP 88 (==)
+3624 POP_JUMP_IF_FALSE 25 (to 3644)
+
+3626 LOAD_GLOBAL 19 (NULL + print)
+3628 LOAD_GLOBAL 20 (CYAN)
+3630 FORMAT_SIMPLE
+3632 LOAD_CONST 103 ("Power Word Krill")
+3634 LOAD_GLOBAL 22 (RESET)
+3636 FORMAT_SIMPLE
+3638 BUILD_STRING 3
+3640 CALL 1
+3642 POP_TOP
+3644 JUMP_FORWARD 30 (to 3672)
+
+3646 LOAD_FAST 26 (magic)
+3648 LOAD_CONST 104 ("Vlaakith")
+3650 COMPARE_OP 88 (==)
+3652 POP_JUMP_IF_FALSE 24 (to 3670)
+
+3654 LOAD_GLOBAL 19 (NULL + print)
+3656 LOAD_GLOBAL 30 (YELL)
+3658 FORMAT_SIMPLE
+3660 LOAD_CONST 95 ("Who?")
+3662 LOAD_GLOBAL 22 (RESET)
+3664 FORMAT_SIMPLE
+3666 BUILD_STRING 3
+3668 CALL 1
+3670 POP_TOP
+
+3672 LOAD_GLOBAL 19 (NULL + print)
+3674 LOAD_GLOBAL 20 (CYAN)
+3676 FORMAT_SIMPLE
+3678 CALL 1
+3680 POP_TOP
+
+3682 LOAD_GLOBAL 19 (NULL + print)
+3684 LOAD_CONST 15 ("================================================================")
+3686 CALL 1
+3688 POP_TOP
+
+3690 LOAD_GLOBAL 19 (NULL + print)
+3692 LOAD_GLOBAL 22 (RESET)
+3694 FORMAT_SIMPLE
+3696 CALL 1
+3698 POP_TOP
+
+3700 LOAD_GLOBAL 33 (NULL + len)
+3702 LOAD_FAST 19 (player_hand)
+3704 CALL 1
+3706 LOAD_CONST 2 (0)
+3708 COMPARE_OP 148 (>)
+3710 POP_JUMP_IF_FALSE 18 (to 3726)
+3712 LOAD_GLOBAL 33 (NULL + len)
+3714 LOAD_FAST 20 (NPC_hand)
+3716 CALL 1
+3718 LOAD_CONST 2 (0)
+3720 COMPARE_OP 148 (>)
+3722 POP_JUMP_IF_FALSE 3 (to 3726)
+3724 JUMP_BACKWARD 3977 (to 330)
+
+3726 LOAD_GLOBAL 19 (NULL + print)
+3728 LOAD_GLOBAL 20 (CYAN)
+3730 FORMAT_SIMPLE
+3732 CALL 1
+3734 POP_TOP
+
+3736 LOAD_GLOBAL 19 (NULL + print)
+3738 LOAD_CONST 15 ("================================================================")
+3740 CALL 1
+3742 POP_TOP
+
+3744 LOAD_GLOBAL 19 (NULL + print)
+3746 LOAD_GLOBAL 20 (CYAN)
+3748 FORMAT_SIMPLE
+3750 CALL 1
+3752 POP_TOP
+
+3754 LOAD_GLOBAL 19 (NULL + print)
+3756 LOAD_GLOBAL 44 (BW)
+3758 FORMAT_SIMPLE
+3760 LOAD_CONST 105 ("GAME OVER!")
+3762 LOAD_GLOBAL 22 (RESET)
+3764 FORMAT_SIMPLE
+3766 BUILD_STRING 3
+3768 CALL 1
+3770 POP_TOP
+
+3772 LOAD_GLOBAL 19 (NULL + print)
+3774 LOAD_GLOBAL 62 (BLACK)
+3776 FORMAT_SIMPLE
+3778 LOAD_CONST 81 ("The Path...")
+3780 LOAD_GLOBAL 22 (RESET)
+3782 FORMAT_SIMPLE
+3784 BUILD_STRING 3
+3786 CALL 1
+3788 POP_TOP
+
+3790 LOAD_FAST 21 (player_tricks)
+3792 LOAD_CONST 4 (7)
+3794 COMPARE_OP 88 (==)
+3796 POP_JUMP_IF_FALSE 55 (to 3844)
+
+3798 LOAD_GLOBAL 19 (NULL + print)
+3800 LOAD_GLOBAL 38 (RED)
+3802 FORMAT_SIMPLE
+3804 LOAD_CONST 25 ("Player")
+3806 LOAD_GLOBAL 22 (RESET)
+3808 FORMAT_SIMPLE
+3810 LOAD_CONST 20 (" ")
+3812 LOAD_GLOBAL 30 (YELL)
+3814 FORMAT_SIMPLE
+3816 LOAD_CONST 26 ("Score:")
+3818 LOAD_GLOBAL 22 (RESET)
+3820 FORMAT_SIMPLE
+3822 LOAD_CONST 20 (" ")
+3824 LOAD_GLOBAL 38 (RED)
+3826 FORMAT_SIMPLE
+3828 LOAD_FAST 21 (player_tricks)
+3830 FORMAT_SIMPLE
+3832 LOAD_GLOBAL 22 (RESET)
+3834 FORMAT_SIMPLE
+3836 LOAD_CONST 11 ("\n")
+3838 BUILD_STRING 12
+3840 CALL 1
+3842 POP_TOP
+3844 JUMP_FORWARD 150 (to 3984)
+
+3846 LOAD_FAST 21 (player_tricks)
+3848 LOAD_CONST 27 (13)
+3850 COMPARE_OP 88 (==)
+3852 POP_JUMP_IF_FALSE 55 (to 3900)
+
+3854 LOAD_GLOBAL 19 (NULL + print)
+3856 LOAD_GLOBAL 40 (BLUE)
+3858 FORMAT_SIMPLE
+3860 LOAD_CONST 25 ("Player")
+3862 LOAD_GLOBAL 22 (RESET)
+3864 FORMAT_SIMPLE
+3866 LOAD_CONST 20 (" ")
+3868 LOAD_GLOBAL 30 (YELL)
+3870 FORMAT_SIMPLE
+3872 LOAD_CONST 26 ("Score:")
+3874 LOAD_GLOBAL 22 (RESET)
+3876 FORMAT_SIMPLE
+3878 LOAD_CONST 20 (" ")
+3880 LOAD_GLOBAL 40 (BLUE)
+3882 FORMAT_SIMPLE
+3884 LOAD_FAST 21 (player_tricks)
+3886 FORMAT_SIMPLE
+3888 LOAD_GLOBAL 22 (RESET)
+3890 FORMAT_SIMPLE
+3892 LOAD_CONST 11 ("\n")
+3894 BUILD_STRING 12
+3896 CALL 1
+3898 POP_TOP
+3900 JUMP_FORWARD 89 (to 3984)
+
+3902 LOAD_FAST 21 (player_tricks)
+3904 LOAD_CONST 28 (20)
+3906 COMPARE_OP 88 (==)
+3908 POP_JUMP_IF_FALSE 55 (to 3956)
+
+3910 LOAD_GLOBAL 19 (NULL + print)
+3912 LOAD_GLOBAL 42 (GREEN)
+3914 FORMAT_SIMPLE
+3916 LOAD_CONST 25 ("Player")
+3918 LOAD_GLOBAL 22 (RESET)
+3920 FORMAT_SIMPLE
+3922 LOAD_CONST 20 (" ")
+3924 LOAD_GLOBAL 30 (YELL)
+3926 FORMAT_SIMPLE
+3928 LOAD_CONST 26 ("Score:")
+3930 LOAD_GLOBAL 22 (RESET)
+3932 FORMAT_SIMPLE
+3934 LOAD_CONST 20 (" ")
+3936 LOAD_GLOBAL 42 (GREEN)
+3938 FORMAT_SIMPLE
+3940 LOAD_FAST 21 (player_tricks)
+3942 FORMAT_SIMPLE
+3944 LOAD_GLOBAL 22 (RESET)
+3946 FORMAT_SIMPLE
+3948 LOAD_CONST 11 ("\n")
+3950 BUILD_STRING 12
+3952 CALL 1
+3954 POP_TOP
+3956 JUMP_FORWARD 28 (to 3984)
+
+3958 LOAD_GLOBAL 19 (NULL + print)
+3960 LOAD_GLOBAL 30 (YELL)
+3962 FORMAT_SIMPLE
+3964 LOAD_CONST 30 ("Player Score:")
+3966 LOAD_GLOBAL 22 (RESET)
+3968 FORMAT_SIMPLE
+3970 LOAD_CONST 20 (" ")
+3972 LOAD_FAST 21 (player_tricks)
+3974 FORMAT_SIMPLE
+3976 LOAD_CONST 11 ("\n")
+3978 BUILD_STRING 6
+3980 CALL 1
+3982 POP_TOP
+
+3984 LOAD_FAST 22 (NPC_tricks)
+3986 LOAD_CONST 4 (7)
+3988 COMPARE_OP 88 (==)
+3990 POP_JUMP_IF_FALSE 55 (to 4038)
+
+3992 LOAD_GLOBAL 19 (NULL + print)
+3994 LOAD_GLOBAL 38 (RED)
+3996 FORMAT_SIMPLE
+3998 LOAD_CONST 31 ("ArtSym")
+4000 LOAD_GLOBAL 22 (RESET)
+4002 FORMAT_SIMPLE
+4004 LOAD_CONST 20 (" ")
+4006 LOAD_GLOBAL 36 (MAG)
+4008 FORMAT_SIMPLE
+4010 LOAD_CONST 26 ("Score:")
+4012 LOAD_GLOBAL 22 (RESET)
+4014 FORMAT_SIMPLE
+4016 LOAD_CONST 20 (" ")
+4018 LOAD_GLOBAL 38 (RED)
+4020 FORMAT_SIMPLE
+4022 LOAD_FAST 22 (NPC_tricks)
+4024 FORMAT_SIMPLE
+4026 LOAD_GLOBAL 22 (RESET)
+4028 FORMAT_SIMPLE
+4030 LOAD_CONST 11 ("\n")
+4032 BUILD_STRING 12
+4034 CALL 1
+4036 POP_TOP
+4038 JUMP_FORWARD 150 (to 4178)
+
+4040 LOAD_FAST 22 (NPC_tricks)
+4042 LOAD_CONST 27 (13)
+4044 COMPARE_OP 88 (==)
+4046 POP_JUMP_IF_FALSE 55 (to 4094)
+
+4048 LOAD_GLOBAL 19 (NULL + print)
+4050 LOAD_GLOBAL 40 (BLUE)
+4052 FORMAT_SIMPLE
+4054 LOAD_CONST 31 ("ArtSym")
+4056 LOAD_GLOBAL 22 (RESET)
+4058 FORMAT_SIMPLE
+4060 LOAD_CONST 20 (" ")
+4062 LOAD_GLOBAL 36 (MAG)
+4064 FORMAT_SIMPLE
+4066 LOAD_CONST 26 ("Score:")
+4068 LOAD_GLOBAL 22 (RESET)
+4070 FORMAT_SIMPLE
+4072 LOAD_CONST 20 (" ")
+4074 LOAD_GLOBAL 40 (BLUE)
+4076 FORMAT_SIMPLE
+4078 LOAD_FAST 22 (NPC_tricks)
+4080 FORMAT_SIMPLE
+4082 LOAD_GLOBAL 22 (RESET)
+4084 FORMAT_SIMPLE
+4086 LOAD_CONST 11 ("\n")
+4088 BUILD_STRING 12
+4090 CALL 1
+4092 POP_TOP
+4094 JUMP_FORWARD 89 (to 4178)
+
+4096 LOAD_FAST 22 (NPC_tricks)
+4098 LOAD_CONST 28 (20)
+4100 COMPARE_OP 88 (==)
+4102 POP_JUMP_IF_FALSE 55 (to 4150)
+
+4104 LOAD_GLOBAL 19 (NULL + print)
+4106 LOAD_GLOBAL 42 (GREEN)
+4108 FORMAT_SIMPLE
+4110 LOAD_CONST 31 ("ArtSym")
+4112 LOAD_GLOBAL 22 (RESET)
+4114 FORMAT_SIMPLE
+4116 LOAD_CONST 20 (" ")
+4118 LOAD_GLOBAL 36 (MAG)
+4120 FORMAT_SIMPLE
+4122 LOAD_CONST 26 ("Score:")
+4124 LOAD_GLOBAL 22 (RESET)
+4126 FORMAT_SIMPLE
+4128 LOAD_CONST 20 (" ")
+4130 LOAD_GLOBAL 42 (GREEN)
+4132 FORMAT_SIMPLE
+4134 LOAD_FAST 22 (NPC_tricks)
+4136 FORMAT_SIMPLE
+4138 LOAD_GLOBAL 22 (RESET)
+4140 FORMAT_SIMPLE
+4142 LOAD_CONST 11 ("\n")
+4144 BUILD_STRING 12
+4146 CALL 1
+4148 POP_TOP
+4150 JUMP_FORWARD 28 (to 4178)
+
+4152 LOAD_GLOBAL 19 (NULL + print)
+4154 LOAD_GLOBAL 36 (MAG)
+4156 FORMAT_SIMPLE
+4158 LOAD_CONST 32 ("ArtSym Score:")
+4160 LOAD_GLOBAL 22 (RESET)
+4162 FORMAT_SIMPLE
+4164 LOAD_CONST 20 (" ")
+4166 LOAD_FAST 22 (NPC_tricks)
+4168 FORMAT_SIMPLE
+4170 LOAD_CONST 11 ("\n")
+4172 BUILD_STRING 6
+4174 CALL 1
+4176 POP_TOP
+
+4178 LOAD_FAST 21 (player_tricks)
+4180 LOAD_CONST 4 (7)
+4182 COMPARE_OP 88 (==)
+4184 POP_JUMP_IF_FALSE 9 (to 4198)
+4186 LOAD_FAST 4 (reset_tricks)
+4188 LOAD_CONST 4 (7)
+4190 COMPARE_OP 18 (<)
+4192 POP_JUMP_IF_FALSE 3 (to 4198)
+
+4194 LOAD_CONST 10 (1)
+4196 STORE_FAST 12 (switch_tricks)
+4198 JUMP_FORWARD 53 (to 4278)
+
+4200 LOAD_FAST 21 (player_tricks)
+4202 LOAD_CONST 27 (13)
+4204 COMPARE_OP 88 (==)
+4206 POP_JUMP_IF_FALSE 9 (to 4220)
+4208 LOAD_FAST 4 (reset_tricks)
+4210 LOAD_CONST 27 (13)
+4212 COMPARE_OP 18 (<)
+4214 POP_JUMP_IF_FALSE 3 (to 4220)
+
+4216 LOAD_CONST 106 (2)
+4218 STORE_FAST 12 (switch_tricks)
+4220 JUMP_FORWARD 38 (to 4278)
+
+4222 LOAD_FAST 21 (player_tricks)
+4224 LOAD_CONST 28 (20)
+4226 COMPARE_OP 88 (==)
+4228 POP_JUMP_IF_FALSE 9 (to 4242)
+4230 LOAD_FAST 4 (reset_tricks)
+4232 LOAD_CONST 28 (20)
+4234 COMPARE_OP 18 (<)
+4236 POP_JUMP_IF_FALSE 3 (to 4242)
+
+4238 LOAD_CONST 107 (3)
+4240 STORE_FAST 12 (switch_tricks)
+4242 JUMP_FORWARD 23 (to 4278)
+
+4244 LOAD_FAST 21 (player_tricks)
+4246 LOAD_CONST 29 (26)
+4248 COMPARE_OP 88 (==)
+4250 POP_JUMP_IF_FALSE 6 (to 4260)
+
+4252 LOAD_FAST 3 (game_count)
+4254 LOAD_CONST 10 (1)
+4256 BINARY_OP 13 (+=)
+4258 STORE_FAST 3 (game_count)
+4260 JUMP_FORWARD 11 (to 4278)
+
+4262 LOAD_FAST 21 (player_tricks)
+4264 LOAD_CONST 108 (30)
+4266 COMPARE_OP 88 (==)
+4268 POP_JUMP_IF_FALSE 5 (to 4276)
+
+4270 LOAD_FAST 3 (game_count)
+4272 LOAD_CONST 10 (1)
+4274 BINARY_OP 13 (+=)
+4276 STORE_FAST 3 (game_count)
+
+4278 LOAD_FAST 12 (switch_tricks)
+
+4280 COPY 1
+4282 LOAD_CONST 2 (0)
+4284 COMPARE_OP 88 (==)
+4286 POP_JUMP_IF_FALSE 2 (to 4290)
+4288 POP_TOP
+
+4290 JUMP_FORWARD 117 (to 4418)
+
+4292 COPY 1
+4294 LOAD_CONST 10 (1)
+4296 COMPARE_OP 88 (==)
+4298 POP_JUMP_IF_FALSE 34 (to 4334)
+4300 POP_TOP
+
+4302 LOAD_CONST 4 (7)
+4304 STORE_FAST 4 (reset_tricks)
+
+4306 LOAD_GLOBAL 19 (NULL + print)
+4308 LOAD_GLOBAL 38 (RED)
+4310 FORMAT_SIMPLE
+4312 LOAD_CONST 109 ("Some values seem important. You should try them. Come and see.")
+4314 LOAD_GLOBAL 22 (RESET)
+4316 FORMAT_SIMPLE
+4318 LOAD_CONST 11 ("\n")
+4320 BUILD_STRING 4
+4322 CALL 1
+4324 POP_TOP
+
+4326 LOAD_FAST 3 (game_count)
+4328 LOAD_CONST 10 (1)
+4330 BINARY_OP 13 (+=)
+4332 STORE_FAST 3 (game_count)
+4334 JUMP_FORWARD 77 (to 4418)
+
+4336 COPY 1
+4338 LOAD_CONST 106 (2)
+4340 COMPARE_OP 88 (==)
+4342 POP_JUMP_IF_FALSE 34 (to 4378)
+4344 POP_TOP
+
+4346 LOAD_CONST 27 (13)
+4348 STORE_FAST 4 (reset_tricks)
+
+4350 LOAD_GLOBAL 19 (NULL + print)
+4352 LOAD_GLOBAL 40 (BLUE)
+4354 FORMAT_SIMPLE
+4356 LOAD_CONST 110 ("Perhaps, if you continue, new pathways unto darkness will open up for you...")
+4358 LOAD_GLOBAL 22 (RESET)
+4360 FORMAT_SIMPLE
+4362 LOAD_CONST 11 ("\n")
+4364 BUILD_STRING 4
+4366 CALL 1
+4368 POP_TOP
+
+4370 LOAD_FAST 3 (game_count)
+4372 LOAD_CONST 106 (2)
+4374 BINARY_OP 13 (+=)
+4376 STORE_FAST 3 (game_count)
+4378 JUMP_FORWARD 37 (to 4418)
+
+4380 LOAD_CONST 107 (3)
+4382 COMPARE_OP 88 (==)
+4384 POP_JUMP_IF_FALSE 32 (to 4416)
+
+4386 LOAD_CONST 28 (20)
+4388 STORE_FAST 4 (reset_tricks)
+
+4390 LOAD_GLOBAL 19 (NULL + print)
+4392 LOAD_GLOBAL 42 (GREEN)
+4394 FORMAT_SIMPLE
+4396 LOAD_CONST 111 ("What a strange Icon for this program...")
+4398 LOAD_GLOBAL 22 (RESET)
+4400 FORMAT_SIMPLE
+4402 LOAD_CONST 11 ("\n")
+4404 BUILD_STRING 4
+4406 CALL 1
+4408 POP_TOP
+
+4410 LOAD_FAST 3 (game_count)
+4412 LOAD_CONST 107 (3)
+4414 BINARY_OP 13 (+=)
+4416 STORE_FAST 3 (game_count)
+
+4418 LOAD_FAST 21 (player_tricks)
+4420 LOAD_FAST 22 (NPC_tricks)
+4422 COMPARE_OP 148 (>)
+4424 POP_JUMP_IF_FALSE 25 (to 4444)
+
+4426 LOAD_GLOBAL 19 (NULL + print)
+4428 LOAD_GLOBAL 42 (GREEN)
+4430 FORMAT_SIMPLE
+4432 LOAD_CONST 112 ("YOU WIN!")
+4434 LOAD_GLOBAL 22 (RESET)
+4436 FORMAT_SIMPLE
+4438 BUILD_STRING 3
+4440 CALL 1
+4442 POP_TOP
+4444 JUMP_FORWARD 147 (to 4574)
+
+4446 LOAD_FAST 21 (player_tricks)
+4448 LOAD_FAST 22 (NPC_tricks)
+4450 COMPARE_OP 88 (==)
+4452 POP_JUMP_IF_FALSE 25 (to 4472)
+
+4454 LOAD_GLOBAL 19 (NULL + print)
+4456 LOAD_GLOBAL 40 (BLUE)
+4458 FORMAT_SIMPLE
+4460 LOAD_CONST 113 ("TIED GAME!")
+4462 LOAD_GLOBAL 22 (RESET)
+4464 FORMAT_SIMPLE
+4466 BUILD_STRING 3
+4468 CALL 1
+4470 POP_TOP
+4472 JUMP_FORWARD 116 (to 4574)
+
+4474 LOAD_GLOBAL 19 (NULL + print)
+4476 LOAD_GLOBAL 38 (RED)
+4478 FORMAT_SIMPLE
+4480 LOAD_CONST 114 ("YOU LOSE!")
+4482 LOAD_GLOBAL 22 (RESET)
+4484 FORMAT_SIMPLE
+4486 BUILD_STRING 3
+4488 CALL 1
+4490 POP_TOP
+
+4492 LOAD_FAST 22 (NPC_tricks)
+4494 LOAD_CONST 4 (7)
+4496 COMPARE_OP 188 (>=)
+4498 POP_JUMP_IF_FALSE 25 (to 4518)
+
+4500 LOAD_GLOBAL 19 (NULL + print)
+4502 LOAD_GLOBAL 80 (GRAY)
+4504 FORMAT_SIMPLE
+4506 LOAD_CONST 115 ("Hint: Important Values lead to Important Paths. Be sure to try them all...")
+4508 LOAD_GLOBAL 22 (RESET)
+4510 FORMAT_SIMPLE
+4512 BUILD_STRING 3
+4514 CALL 1
+4516 POP_TOP
+4518 JUMP_FORWARD 61 (to 4574)
+
+4520 LOAD_FAST 22 (NPC_tricks)
+4522 LOAD_CONST 27 (13)
+4524 COMPARE_OP 188 (>=)
+4526 POP_JUMP_IF_FALSE 25 (to 4546)
+
+4528 LOAD_GLOBAL 19 (NULL + print)
+4530 LOAD_GLOBAL 80 (GRAY)
+4532 FORMAT_SIMPLE
+4534 LOAD_CONST 116 ("Hint: Two primes together, make a new whole...")
+4536 LOAD_GLOBAL 22 (RESET)
+4538 FORMAT_SIMPLE
+4540 BUILD_STRING 3
+4542 CALL 1
+4544 POP_TOP
+4546 JUMP_FORWARD 30 (to 4574)
+
+4548 LOAD_FAST 22 (NPC_tricks)
+4550 LOAD_CONST 28 (20)
+4552 COMPARE_OP 188 (>=)
+4554 POP_JUMP_IF_FALSE 24 (to 4572)
+
+4556 LOAD_GLOBAL 19 (NULL + print)
+4558 LOAD_GLOBAL 80 (GRAY)
+4560 FORMAT_SIMPLE
+4562 LOAD_CONST 117 ("Hint: Keep trying... Eventually you will find the path. Ask around, who knows...")
+4564 LOAD_GLOBAL 22 (RESET)
+4566 FORMAT_SIMPLE
+4568 BUILD_STRING 3
+4570 CALL 1
+4572 POP_TOP
+
+4574 LOAD_FAST 3 (game_count)
+4576 LOAD_CONST 4 (7)
+4578 COMPARE_OP 188 (>=)
+4580 POP_JUMP_IF_FALSE 131 (to 4678)
+4582 LOAD_FAST 5 (game_7)
+4584 TO_BOOL
+4586 POP_JUMP_IF_FALSE 124 (to 4678)
+
+4588 LOAD_GLOBAL 19 (NULL + print)
+4590 LOAD_GLOBAL 38 (RED)
+4592 FORMAT_SIMPLE
+4594 LOAD_CONST 118 ("RESOLVED: We will be made anew.")
+4596 LOAD_GLOBAL 22 (RESET)
+4598 FORMAT_SIMPLE
+4600 BUILD_STRING 3
+4602 CALL 1
+4604 POP_TOP
+
+4606 LOAD_CONST 43 (False)
+4608 STORE_FAST 5 (game_7)
+
+4610 LOAD_GLOBAL 19 (NULL + print)
+4612 LOAD_GLOBAL 38 (RED)
+4614 FORMAT_SIMPLE
+4616 LOAD_CONST 11 ("\n")
+4618 LOAD_FAST 11 (Vow)
+4620 FORMAT_SIMPLE
+4622 LOAD_CONST 11 ("\n")
+4624 LOAD_GLOBAL 22 (RESET)
+4626 FORMAT_SIMPLE
+4628 BUILD_STRING 5
+4630 CALL 1
+4632 POP_TOP
+
+4634 NOP
+
+4636 LOAD_GLOBAL 53 (NULL + open)
+4638 LOAD_GLOBAL 0 (os)
+4640 LOAD_ATTR 54 (path)
+4642 LOAD_ATTR 57 (NULL|self + join)
+4644 LOAD_FAST 2 (safe_dir)
+4646 LOAD_CONST 119 ("A_New_Vow.txt")
+4648 CALL 2
+4650 LOAD_CONST 53 ("w")
+4652 CALL 2
+4654 BEFORE_WITH
+4656 STORE_FAST 23 (file)
+
+4658 LOAD_FAST 23 (file)
+4660 LOAD_ATTR 59 (NULL|self + write)
+4662 LOAD_FAST 11 (Vow)
+4664 CALL 1
+4666 POP_TOP
+
+4668 LOAD_CONST 0 (None)
+4670 LOAD_CONST 0 (None)
+4672 LOAD_CONST 0 (None)
+4674 CALL 2
+4676 POP_TOP
+
+4678 JUMP_FORWARD 272 (to 4892)
+
+4680 LOAD_FAST 3 (game_count)
+4682 LOAD_CONST 27 (13)
+4684 COMPARE_OP 188 (>=)
+4686 POP_JUMP_IF_FALSE 130 (to 4784)
+4688 LOAD_FAST 6 (game_13)
+4690 TO_BOOL
+4692 POP_JUMP_IF_FALSE 123 (to 4784)
+
+4694 LOAD_GLOBAL 19 (NULL + print)
+4696 LOAD_GLOBAL 40 (BLUE)
+4698 FORMAT_SIMPLE
+4700 LOAD_CONST 121 ("Today, Class, we will be discussing: /The Map of Cyr/...")
+4702 LOAD_GLOBAL 22 (RESET)
+4704 FORMAT_SIMPLE
+4706 BUILD_STRING 3
+4708 CALL 1
+4710 POP_TOP
+
+4712 LOAD_CONST 43 (False)
+4714 STORE_FAST 6 (game_13)
+
+4716 LOAD_GLOBAL 19 (NULL + print)
+4718 LOAD_GLOBAL 40 (BLUE)
+4720 FORMAT_SIMPLE
+4722 LOAD_CONST 11 ("\n")
+4724 LOAD_FAST 10 (Map_of_Cyr)
+4726 FORMAT_SIMPLE
+4728 LOAD_CONST 11 ("\n")
+4730 LOAD_GLOBAL 22 (RESET)
+4732 FORMAT_SIMPLE
+4734 BUILD_STRING 5
+4736 CALL 1
+4738 POP_TOP
+
+4740 NOP
+
+4742 LOAD_GLOBAL 53 (NULL + open)
+4744 LOAD_GLOBAL 0 (os)
+4746 LOAD_ATTR 54 (path)
+4748 LOAD_ATTR 57 (NULL|self + join)
+4750 LOAD_FAST 2 (safe_dir)
+4752 LOAD_CONST 122 ("The_Map_of_Cyr.txt")
+4754 CALL 2
+4756 LOAD_CONST 53 ("w")
+4758 CALL 2
+4760 BEFORE_WITH
+4762 STORE_FAST 23 (file)
+
+4764 LOAD_FAST 23 (file)
+4766 LOAD_ATTR 59 (NULL|self + write)
+4768 LOAD_FAST 10 (Map_of_Cyr)
+4770 CALL 1
+4772 POP_TOP
+
+4774 LOAD_CONST 0 (None)
+4776 LOAD_CONST 0 (None)
+4778 LOAD_CONST 0 (None)
+4780 CALL 2
+4782 POP_TOP
+
+4784 JUMP_FORWARD 136 (to 4892)
+
+4786 LOAD_FAST 3 (game_count)
+4788 LOAD_CONST 28 (20)
+4790 COMPARE_OP 188 (>=)
+4792 POP_JUMP_IF_FALSE 130 (to 4890)
+4794 LOAD_FAST 7 (game_20)
+4796 TO_BOOL
+4798 POP_JUMP_IF_FALSE 123 (to 4890)
+
+4800 LOAD_GLOBAL 19 (NULL + print)
+4802 LOAD_GLOBAL 42 (GREEN)
+4804 FORMAT_SIMPLE
+4806 LOAD_CONST 124 ("THE PATH AWAITS...EXCELLENT WORK...")
+4808 LOAD_GLOBAL 22 (RESET)
+4810 FORMAT_SIMPLE
+4812 BUILD_STRING 3
+4814 CALL 1
+4816 POP_TOP
+
+4818 LOAD_CONST 43 (False)
+4820 STORE_FAST 7 (game_20)
+
+4822 LOAD_GLOBAL 19 (NULL + print)
+4824 LOAD_GLOBAL 42 (GREEN)
+4826 FORMAT_SIMPLE
+4828 LOAD_CONST 11 ("\n")
+4830 LOAD_FAST 9 (congrats)
+4832 FORMAT_SIMPLE
+4834 LOAD_CONST 11 ("\n")
+4836 LOAD_GLOBAL 22 (RESET)
+4838 FORMAT_SIMPLE
+4840 BUILD_STRING 5
+4842 CALL 1
+4844 POP_TOP
+
+4846 NOP
+
+4848 LOAD_GLOBAL 53 (NULL + open)
+4850 LOAD_GLOBAL 0 (os)
+4852 LOAD_ATTR 54 (path)
+4854 LOAD_ATTR 57 (NULL|self + join)
+4856 LOAD_FAST 2 (safe_dir)
+4858 LOAD_CONST 125 ("a_message.txt")
+4860 CALL 2
+4862 LOAD_CONST 53 ("w")
+4864 CALL 2
+4866 BEFORE_WITH
+4868 STORE_FAST 23 (file)
+
+4870 LOAD_FAST 23 (file)
+4872 LOAD_ATTR 59 (NULL|self + write)
+4874 LOAD_FAST 9 (congrats)
+4876 CALL 1
+4878 POP_TOP
+
+4880 LOAD_CONST 0 (None)
+4882 LOAD_CONST 0 (None)
+4884 LOAD_CONST 0 (None)
+4886 CALL 2
+4888 POP_TOP
+
+4890 NOP
+
+4892 LOAD_GLOBAL 47 (NULL + input)
+4894 LOAD_CONST 127 ("Would you like to play again? (")
+4896 LOAD_GLOBAL 42 (GREEN)
+4898 FORMAT_SIMPLE
+4900 LOAD_CONST 49 ("Y")
+4902 LOAD_GLOBAL 22 (RESET)
+4904 FORMAT_SIMPLE
+4906 LOAD_CONST 50 ("/")
+4908 LOAD_GLOBAL 38 (RED)
+4910 FORMAT_SIMPLE
+4912 LOAD_CONST 51 ("N")
+4914 LOAD_GLOBAL 22 (RESET)
+4916 FORMAT_SIMPLE
+4918 LOAD_CONST 35 (")")
+4920 BUILD_STRING 9
+4922 CALL 1
+4924 LOAD_ATTR 49 (NULL|self + capitalize)
+4926 CALL 0
+4928 STORE_FAST 27 (again)
+
+4930 LOAD_FAST 27 (again)
+4932 LOAD_CONST 49 ("Y")
+4934 COMPARE_OP 119 (!=)
+4936 POP_JUMP_IF_FALSE 74 (to 5002)
+4938 LOAD_FAST 27 (again)
+4940 LOAD_CONST 51 ("N")
+4942 COMPARE_OP 119 (!=)
+4944 POP_JUMP_IF_FALSE 68 (to 5002)
+
+4946 LOAD_GLOBAL 47 (NULL + input)
+4948 LOAD_CONST 128 ("Invalid input. Would you like to play again? (")
+4950 LOAD_GLOBAL 42 (GREEN)
+4952 FORMAT_SIMPLE
+4954 LOAD_CONST 49 ("Y")
+4956 LOAD_GLOBAL 22 (RESET)
+4958 FORMAT_SIMPLE
+4960 LOAD_CONST 50 ("/")
+4962 LOAD_GLOBAL 38 (RED)
+4964 FORMAT_SIMPLE
+4966 LOAD_CONST 51 ("N")
+4968 LOAD_GLOBAL 22 (RESET)
+4970 FORMAT_SIMPLE
+4972 LOAD_CONST 35 (")")
+4974 BUILD_STRING 9
+4976 CALL 1
+4978 LOAD_ATTR 49 (NULL|self + capitalize)
+4980 CALL 0
+4982 STORE_FAST 27 (again)
+
+4984 LOAD_FAST 27 (again)
+4986 LOAD_CONST 49 ("Y")
+4988 COMPARE_OP 119 (!=)
+4990 POP_JUMP_IF_FALSE 8 (to 5002)
+4992 LOAD_FAST 27 (again)
+4994 LOAD_CONST 51 ("N")
+4996 COMPARE_OP 119 (!=)
+4998 POP_JUMP_IF_FALSE 2 (to 5002)
+5000 JUMP_BACKWARD 68 (to 4946)
+
+5002 LOAD_FAST 27 (again)
+5004 LOAD_CONST 51 ("N")
+5006 COMPARE_OP 88 (==)
+5008 POP_JUMP_IF_FALSE 1 (to 5010)
+
+5010 RETURN_CONST 0 (None)
+
+5012 LOAD_FAST 3 (game_count)
+5014 LOAD_CONST 2 (0)
+5016 COMPARE_OP 188 (>=)
+5018 POP_JUMP_IF_FALSE 3 (to 5022)
+5020 JUMP_BACKWARD 5729 (to 94)
+5022 RETURN_CONST 0 (None)
+5024 RETURN_CONST 0 (None)
+
+5026 PUSH_EXC_INFO
+5028 WITH_EXCEPT_START 0
+5030 TO_BOOL
+5032 POP_JUMP_IF_TRUE 1 (to 5034)
+5034 RERAISE 2
+5036 POP_TOP
+5038 POP_EXCEPT
+5040 POP_TOP
+5042 POP_TOP
+5044 JUMP_BACKWARD_NO_INTERRUPT 4228 (to 1382)
+5046 COPY 3
+5048 POP_EXCEPT
+5050 RERAISE 1
+5052 PUSH_EXC_INFO
+
+5054 LOAD_GLOBAL 60 (PermissionError)
+5056 CHECK_EXC_MATCH
+5058 POP_JUMP_IF_FALSE 15 (to 5072)
+5060 POP_TOP
+
+5062 LOAD_GLOBAL 61 (NULL + PermissionError)
+5064 LOAD_CONST 54 ("Error: Permission denied to access 'the_path.txt'.")
+5066 CALL 1
+5068 POP_TOP
+5070 POP_EXCEPT
+5072 JUMP_BACKWARD_NO_INTERRUPT 4255 (to 1382)
+
+5074 RERAISE 0
+5076 COPY 3
+5078 POP_EXCEPT
+5080 RERAISE 1
+5082 PUSH_EXC_INFO
+
+5084 LOAD_GLOBAL 19 (NULL + print)
+5086 LOAD_GLOBAL 38 (RED)
+5088 FORMAT_SIMPLE
+5090 LOAD_CONST 55 ("HE")
+5092 LOAD_GLOBAL 22 (RESET)
+5094 FORMAT_SIMPLE
+5096 LOAD_CONST 20 (" ")
+5098 LOAD_GLOBAL 40 (BLUE)
+5100 FORMAT_SIMPLE
+5102 LOAD_CONST 56 ("WILL")
+5104 LOAD_GLOBAL 22 (RESET)
+5106 FORMAT_SIMPLE
+5108 LOAD_CONST 20 (" ")
+5110 LOAD_GLOBAL 42 (GREEN)
+5112 FORMAT_SIMPLE
+5114 LOAD_CONST 57 ("BE")
+5116 LOAD_GLOBAL 22 (RESET)
+5118 FORMAT_SIMPLE
+5120 LOAD_CONST 20 (" ")
+5122 LOAD_GLOBAL 44 (BW)
+5124 FORMAT_SIMPLE
+5126 LOAD_CONST 58 ("WAITING")
+5128 LOAD_GLOBAL 22 (RESET)
+5130 FORMAT_SIMPLE
+5132 LOAD_CONST 59 (".")
+5134 LOAD_GLOBAL 62 (BLACK)
+5136 FORMAT_SIMPLE
+5138 LOAD_CONST 60 ("He.")
+5140 LOAD_GLOBAL 22 (RESET)
+5142 FORMAT_SIMPLE
+5144 LOAD_CONST 11 ("\n")
+5146 BUILD_STRING 20
+5148 CALL 1
+5150 POP_TOP
+5152 RERAISE 0
+5154 COPY 3
+5156 POP_EXCEPT
+5158 RERAISE 1
+
+5160 PUSH_EXC_INFO
+5162 WITH_EXCEPT_START 0
+5164 TO_BOOL
+5166 POP_JUMP_IF_TRUE 1 (to 5168)
+5168 RERAISE 2
+5170 POP_TOP
+5172 POP_EXCEPT
+5174 POP_TOP
+5176 POP_TOP
+5178 JUMP_BACKWARD_NO_INTERRUPT 3800 (to 1812)
+5180 COPY 3
+5182 POP_EXCEPT
+5184 RERAISE 1
+5186 PUSH_EXC_INFO
+
+5188 LOAD_GLOBAL 60 (PermissionError)
+5190 CHECK_EXC_MATCH
+5192 POP_JUMP_IF_FALSE 15 (to 5206)
+5194 POP_TOP
+
+5196 LOAD_GLOBAL 61 (NULL + PermissionError)
+5198 LOAD_CONST 54 ("Error: Permission denied to access 'the_path.txt'.")
+5200 CALL 1
+5202 POP_TOP
+5204 POP_EXCEPT
+5206 JUMP_BACKWARD_NO_INTERRUPT 3827 (to 1812)
+
+5208 RERAISE 0
+5210 COPY 3
+5212 POP_EXCEPT
+5214 RERAISE 1
+5216 PUSH_EXC_INFO
+
+5218 LOAD_GLOBAL 19 (NULL + print)
+5220 LOAD_GLOBAL 38 (RED)
+5222 FORMAT_SIMPLE
+5224 LOAD_CONST 55 ("HE")
+5226 LOAD_GLOBAL 22 (RESET)
+5228 FORMAT_SIMPLE
+5230 LOAD_CONST 20 (" ")
+5232 LOAD_GLOBAL 40 (BLUE)
+5234 FORMAT_SIMPLE
+5236 LOAD_CONST 56 ("WILL")
+5238 LOAD_GLOBAL 22 (RESET)
+5240 FORMAT_SIMPLE
+5242 LOAD_CONST 20 (" ")
+5244 LOAD_GLOBAL 42 (GREEN)
+5246 FORMAT_SIMPLE
+5248 LOAD_CONST 57 ("BE")
+5250 LOAD_GLOBAL 22 (RESET)
+5252 FORMAT_SIMPLE
+5254 LOAD_CONST 20 (" ")
+5256 LOAD_GLOBAL 44 (BW)
+5258 FORMAT_SIMPLE
+5260 LOAD_CONST 58 ("WAITING")
+5262 LOAD_GLOBAL 22 (RESET)
+5264 FORMAT_SIMPLE
+5266 LOAD_CONST 64 (".\n")
+5268 BUILD_STRING 16
+5270 CALL 1
+5272 POP_TOP
+5274 RERAISE 0
+5276 COPY 3
+5278 POP_EXCEPT
+5280 RERAISE 1
+
+5282 PUSH_EXC_INFO
+5284 WITH_EXCEPT_START 0
+5286 TO_BOOL
+5288 POP_JUMP_IF_TRUE 1 (to 5290)
+5290 RERAISE 2
+5292 POP_TOP
+5294 POP_EXCEPT
+5296 POP_TOP
+5298 POP_TOP
+5300 JUMP_BACKWARD_NO_INTERRUPT 691 (to 4678)
+5302 COPY 3
+5304 POP_EXCEPT
+5306 RERAISE 1
+5308 PUSH_EXC_INFO
+
+5310 LOAD_GLOBAL 60 (PermissionError)
+5312 CHECK_EXC_MATCH
+5314 POP_JUMP_IF_FALSE 15 (to 5328)
+5316 POP_TOP
+
+5318 LOAD_GLOBAL 61 (NULL + PermissionError)
+5320 LOAD_CONST 120 ("Error: Permission denied to access 'A_New_Vow.txt'.")
+5322 CALL 1
+5324 POP_TOP
+5326 POP_EXCEPT
+5328 JUMP_BACKWARD_NO_INTERRUPT 718 (to 4678)
+
+5330 RERAISE 0
+5332 COPY 3
+5334 POP_EXCEPT
+5336 RERAISE 1
+5338 PUSH_EXC_INFO
+
+5340 RERAISE 0
+5342 COPY 3
+5344 POP_EXCEPT
+5346 RERAISE 1
+
+5348 PUSH_EXC_INFO
+5350 WITH_EXCEPT_START 0
+5352 TO_BOOL
+5354 POP_JUMP_IF_TRUE 1 (to 5356)
+5356 RERAISE 2
+5358 POP_TOP
+5360 POP_EXCEPT
+5362 POP_TOP
+5364 POP_TOP
+5366 JUMP_BACKWARD_NO_INTERRUPT 605 (to 4784)
+5368 COPY 3
+5370 POP_EXCEPT
+5372 RERAISE 1
+5374 PUSH_EXC_INFO
+
+5376 LOAD_GLOBAL 60 (PermissionError)
+5378 CHECK_EXC_MATCH
+5380 POP_JUMP_IF_FALSE 15 (to 5394)
+5382 POP_TOP
+
+5384 LOAD_GLOBAL 61 (NULL + PermissionError)
+5386 LOAD_CONST 123 ("Error: Permission denied to access 'The_Map_of_Cyr.txt'.")
+5388 CALL 1
+5390 POP_TOP
+5392 POP_EXCEPT
+5394 JUMP_BACKWARD_NO_INTERRUPT 632 (to 4784)
+
+5396 RERAISE 0
+5398 COPY 3
+5400 POP_EXCEPT
+5402 RERAISE 1
+5404 PUSH_EXC_INFO
+
+5406 RERAISE 0
+5408 COPY 3
+5410 POP_EXCEPT
+5412 RERAISE 1
+
+5414 PUSH_EXC_INFO
+5416 WITH_EXCEPT_START 0
+5418 TO_BOOL
+5420 POP_JUMP_IF_TRUE 1 (to 5422)
+5422 RERAISE 2
+5424 POP_TOP
+5426 POP_EXCEPT
+5428 POP_TOP
+5430 POP_TOP
+5432 JUMP_BACKWARD_NO_INTERRUPT 520 (to 4890)
+5434 COPY 3
+5436 POP_EXCEPT
+5438 RERAISE 1
+5440 PUSH_EXC_INFO
+
+5442 LOAD_GLOBAL 60 (PermissionError)
+5444 CHECK_EXC_MATCH
+5446 POP_JUMP_IF_FALSE 15 (to 5460)
+5448 POP_TOP
+
+5450 LOAD_GLOBAL 61 (NULL + PermissionError)
+5452 LOAD_CONST 126 ("Error: Permission denied to access 'a_message.txt'.")
+5454 CALL 1
+5456 POP_TOP
+5458 POP_EXCEPT
+5460 JUMP_BACKWARD_NO_INTERRUPT 547 (to 4890)
+
+5462 RERAISE 0
+5464 COPY 3
+5466 POP_EXCEPT
+5468 RERAISE 1
+5470 PUSH_EXC_INFO
+
+5472 RERAISE 0
+5474 COPY 3
+5476 POP_EXCEPT
+5478 RERAISE 1
+
+0 COPY_FREE_VARS 1
+
+2 RETURN_GENERATOR
+4 POP_TOP
+6 LOAD_FAST 0 (.0)
+8 GET_ITER
+10 FOR_ITER 20 (to 28)
+12 STORE_FAST 1 (card)
+14 LOAD_DEREF 2 (response)
+16 LOAD_FAST 1 (card)
+18 LOAD_ATTR 0 (rank)
+20 COMPARE_OP 72 (==)
+22 YIELD_VALUE 0
+24 POP_TOP
+26 JUMP_BACKWARD 22 (to 8)
+28 END_FOR
+30 POP_TOP
+32 RETURN_CONST 0 (None)
+34 CALL_INTRINSIC_1 3 (INTRINSIC_STOPITERATION_ERROR)
+36 RERAISE 1
+
+0 COPY_FREE_VARS 1
+
+2 RETURN_GENERATOR
+4 POP_TOP
+6 LOAD_FAST 0 (.0)
+8 GET_ITER
+10 FOR_ITER 20 (to 28)
+12 STORE_FAST 1 (card)
+14 LOAD_DEREF 2 (response)
+16 LOAD_FAST 1 (card)
+18 LOAD_ATTR 0 (rank)
+20 COMPARE_OP 72 (==)
+22 YIELD_VALUE 0
+24 POP_TOP
+26 JUMP_BACKWARD 22 (to 8)
+28 END_FOR
+30 POP_TOP
+32 RETURN_CONST 0 (None)
+34 CALL_INTRINSIC_1 3 (INTRINSIC_STOPITERATION_ERROR)
+36 RERAISE 1
+
+0 COPY_FREE_VARS 1
+
+2 RETURN_GENERATOR
+4 POP_TOP
+6 LOAD_FAST 0 (.0)
+8 GET_ITER
+10 FOR_ITER 20 (to 28)
+12 STORE_FAST 1 (card)
+14 LOAD_DEREF 2 (response)
+16 LOAD_FAST 1 (card)
+18 LOAD_ATTR 0 (rank)
+20 COMPARE_OP 72 (==)
+22 YIELD_VALUE 0
+24 POP_TOP
+26 JUMP_BACKWARD 22 (to 8)
+28 END_FOR
+30 POP_TOP
+32 RETURN_CONST 0 (None)
+34 CALL_INTRINSIC_1 3 (INTRINSIC_STOPITERATION_ERROR)
+36 RERAISE 1
+
+
+0 LOAD_GLOBAL 1 (NULL + enumerate)
+2 LOAD_FAST 1 (player_hand)
+4 CALL 1
+6 GET_ITER
+8 FOR_ITER 41 (to 38)
+10 UNPACK_SEQUENCE 2
+12 STORE_FAST_STORE_FAST 52 (i, card)
+
+14 LOAD_FAST_LOAD_FAST 4 (response, card)
+16 LOAD_ATTR 2 (rank)
+18 COMPARE_OP 88 (==)
+20 POP_JUMP_IF_TRUE 2 (to 24)
+22 JUMP_BACKWARD 22 (to 6)
+
+24 LOAD_FAST 1 (player_hand)
+26 LOAD_ATTR 5 (NULL|self + remove)
+28 LOAD_FAST_LOAD_FAST 19 (player_hand, i)
+30 BINARY_SUBSCR
+32 CALL 1
+34 POP_TOP
+36 JUMP_BACKWARD 43 (to 6)
+
+38 END_FOR
+40 POP_TOP
+
+42 LOAD_GLOBAL 1 (NULL + enumerate)
+44 LOAD_FAST 2 (NPC_hand)
+46 CALL 1
+48 GET_ITER
+50 FOR_ITER 41 (to 80)
+52 UNPACK_SEQUENCE 2
+54 STORE_FAST_STORE_FAST 52 (i, card)
+
+56 LOAD_FAST_LOAD_FAST 4 (response, card)
+58 LOAD_ATTR 2 (rank)
+60 COMPARE_OP 88 (==)
+62 POP_JUMP_IF_TRUE 2 (to 66)
+64 JUMP_BACKWARD 22 (to 48)
+
+66 LOAD_FAST 2 (NPC_hand)
+68 LOAD_ATTR 5 (NULL|self + remove)
+70 LOAD_FAST_LOAD_FAST 35 (NPC_hand, i)
+72 BINARY_SUBSCR
+74 CALL 1
+76 POP_TOP
+78 JUMP_BACKWARD 43 (to 48)
+
+80 END_FOR
+82 POP_TOP
+84 RETURN_CONST 0 (None)
+
+
+0 LOAD_CONST 1 (0)
+2 STORE_FAST 1 (trick)
+
+4 BUILD_LIST 0
+6 STORE_FAST 2 (matches)
+
+8 LOAD_GLOBAL 1 (NULL + set)
+10 CALL 0
+12 STORE_FAST 3 (used_indexes)
+
+14 LOAD_FAST 0 (hand)
+16 LOAD_ATTR 2 (cards)
+18 STORE_FAST 4 (cards)
+
+20 LOAD_GLOBAL 5 (NULL + enumerate)
+22 LOAD_FAST 4 (cards)
+24 CALL 1
+26 GET_ITER
+28 FOR_ITER 183 (to 186)
+30 UNPACK_SEQUENCE 2
+32 STORE_FAST_STORE_FAST 86 (i, card)
+
+34 LOAD_FAST_LOAD_FAST 83 (i, used_indexes)
+36 CONTAINS_OP 0 (in)
+38 POP_JUMP_IF_FALSE 2 (to 42)
+
+40 JUMP_BACKWARD 12 (to 26)
+
+42 LOAD_GLOBAL 7 (NULL + range)
+44 LOAD_FAST 5 (i)
+46 LOAD_CONST 2 (1)
+48 BINARY_OP 0 (+)
+50 LOAD_GLOBAL 9 (NULL + len)
+52 LOAD_FAST 4 (cards)
+54 CALL 1
+56 CALL 2
+58 GET_ITER
+60 FOR_ITER 143 (to 180)
+62 STORE_FAST 7 (j)
+
+64 LOAD_FAST_LOAD_FAST 71 (cards, j)
+66 BINARY_SUBSCR
+68 STORE_FAST 8 (other)
+
+70 LOAD_FAST_LOAD_FAST 115 (j, used_indexes)
+72 CONTAINS_OP 0 (in)
+74 POP_JUMP_IF_FALSE 2 (to 78)
+
+76 JUMP_BACKWARD 14 (to 58)
+
+78 LOAD_FAST_LOAD_FAST 104 (card, other)
+80 COMPARE_OP 88 (==)
+82 POP_JUMP_IF_TRUE 2 (to 86)
+84 JUMP_BACKWARD 21 (to 58)
+86 LOAD_FAST 6 (card)
+88 LOAD_ATTR 11 (NULL|self + equals_exact)
+90 LOAD_FAST 8 (other)
+92 CALL 1
+94 TO_BOOL
+96 POP_JUMP_IF_FALSE 2 (to 100)
+98 JUMP_BACKWARD 45 (to 58)
+
+100 LOAD_GLOBAL 13 (NULL + print)
+102 LOAD_GLOBAL 14 (CYAN)
+104 FORMAT_SIMPLE
+106 LOAD_CONST 3 ("Trick!")
+108 LOAD_GLOBAL 16 (RESET)
+110 FORMAT_SIMPLE
+112 BUILD_STRING 3
+114 CALL 1
+116 POP_TOP
+
+118 LOAD_GLOBAL 13 (NULL + print)
+120 LOAD_FAST 6 (card)
+122 FORMAT_SIMPLE
+124 LOAD_CONST 4 (" and ")
+126 LOAD_FAST 8 (other)
+128 FORMAT_SIMPLE
+130 BUILD_STRING 3
+132 CALL 1
+134 POP_TOP
+
+136 LOAD_FAST 1 (trick)
+138 LOAD_CONST 2 (1)
+140 BINARY_OP 13 (+=)
+142 STORE_FAST 1 (trick)
+
+144 LOAD_FAST 2 (matches)
+146 LOAD_ATTR 19 (NULL|self + append)
+148 LOAD_FAST 6 (card)
+150 CALL 1
+152 POP_TOP
+
+154 LOAD_FAST 2 (matches)
+156 LOAD_ATTR 19 (NULL|self + append)
+158 LOAD_FAST 8 (other)
+160 CALL 1
+162 POP_TOP
+
+164 LOAD_FAST 3 (used_indexes)
+166 LOAD_ATTR 21 (NULL|self + update)
+168 LOAD_FAST_LOAD_FAST 87 (i, j)
+170 BUILD_LIST 2
+172 CALL 1
+174 POP_TOP
+
+176 POP_TOP
+178 JUMP_BACKWARD 181 (to 26)
+
+180 END_FOR
+182 POP_TOP
+184 JUMP_BACKWARD 185 (to 26)
+
+186 END_FOR
+188 POP_TOP
+
+190 LOAD_FAST 2 (matches)
+192 GET_ITER
+194 FOR_ITER 20 (to 210)
+196 STORE_FAST 6 (card)
+
+198 LOAD_FAST 0 (hand)
+200 LOAD_ATTR 23 (NULL|self + remove)
+202 LOAD_FAST 6 (card)
+204 CALL 1
+206 POP_TOP
+208 JUMP_BACKWARD 22 (to 192)
+
+210 END_FOR
+212 POP_TOP
+
+214 LOAD_FAST 1 (trick)
+216 RETURN_VALUE
+
+
+0 LOAD_GLOBAL 1 (NULL + getattr)
+2 LOAD_GLOBAL 2 (sys)
+4 LOAD_CONST 1 ("frozen")
+6 LOAD_CONST 2 (False)
+8 CALL 3
+10 TO_BOOL
+12 POP_JUMP_IF_FALSE 45 (to 26)
+
+14 LOAD_GLOBAL 4 (os)
+16 LOAD_ATTR 6 (path)
+18 LOAD_ATTR 9 (NULL|self + dirname)
+20 LOAD_GLOBAL 2 (sys)
+22 LOAD_ATTR 10 (executable)
+24 CALL 1
+26 RETURN_VALUE
+
+28 LOAD_GLOBAL 4 (os)
+30 LOAD_ATTR 6 (path)
+32 LOAD_ATTR 9 (NULL|self + dirname)
+34 LOAD_GLOBAL 4 (os)
+36 LOAD_ATTR 6 (path)
+38 LOAD_ATTR 13 (NULL|self + abspath)
+40 LOAD_GLOBAL 14 (__file__)
+42 CALL 1
+44 CALL 1
+46 RETURN_VALUE
